@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>bulletinboard</name>
+    <displayName><![CDATA[Marketplace]]></displayName>
+    <version><![CDATA[1.5.1]]></version>
+    <description><![CDATA[Marketplace para clientes]]></description>
+    <author><![CDATA[Snegurka]]></author>
+    <tab><![CDATA[advertising_marketing]]></tab>
+	<confirmUninstall><![CDATA[¿Estás seguro? Todos los datos del módulo se perderán después de desinstalar el módulo]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

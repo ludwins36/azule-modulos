@@ -1,0 +1,22 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-frontend-tab.css
+*
+*  Copyright: Copyright (c) 2010-2018 Vadim Jacobi
+*  License Agreement: http://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.13.0
+*  Date: 2018-09-14
+*  Review: 2018-09-14
+*  URL: http://www.ajax-zoom.com
+*  Demo: prestashop.ajax-zoom.com
+*  Documentation: http://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   http://www.ajax-zoom.com/index.php?cid=download
+*/
+
+.azVideoIframe .video-js .vjs-big-play-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

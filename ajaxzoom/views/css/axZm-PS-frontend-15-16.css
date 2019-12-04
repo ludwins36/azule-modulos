@@ -1,0 +1,57 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-frontend-15-16.css
+*
+*  Copyright: Copyright (c) 2010-2018 Vadim Jacobi
+*  License Agreement: http://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.13.0
+*  Date: 2018-09-14
+*  Review: 2018-09-14
+*  URL: http://www.ajax-zoom.com
+*  Demo: prestashop.ajax-zoom.com
+*  Documentation: http://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   http://www.ajax-zoom.com/index.php?cid=download
+*/
+
+.pb-left-column #image-block,
+.pb-left-column #views_block {
+    display: none !important;
+}
+
+#axZm_mouseOverWithGalleryContainer {
+    z-index: 10;
+}
+
+#new-box-AJAX-ZOOM {
+    left: -3px;
+    top: -3px;
+    z-index: 1001;
+    pointer-events: none;
+}
+
+#sale-box-AJAX-ZOOM {
+    right: -3px;
+    top: -3px;
+    z-index: 1001;
+    pointer-events: none;
+}
+
+#discount-AJAX-ZOOM {
+
+}
+
+#axZm_mouseOverWithGalleryContainer .axZmThumbSliderIcon {
+    height: 15px;
+}
+
+.azVideoIframe .video-js .vjs-big-play-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.az_fancybox .fancybox-overlay {
+    overflow: hidden !important;
+}

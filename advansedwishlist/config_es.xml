@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>advansedwishlist</name>
+    <displayName><![CDATA[Lista de Deseos avanzado]]></displayName>
+    <version><![CDATA[1.7.1]]></version>
+    <description><![CDATA[mostrar Advanced Lista de deseos]]></description>
+    <author><![CDATA[Snegurka]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

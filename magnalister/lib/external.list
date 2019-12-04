@@ -1,0 +1,7 @@
+{
+	"prestashop": "lib/",
+	"shopware": "engine/Shopware/Plugins/Community/Backend/RedMagnalister/Lib/",
+	"magento": "app/code/community/Redgecko/Magnalister/Lib/",
+        "woocommerce": "lib/",
+        "shopify": "magnalister/"
+}

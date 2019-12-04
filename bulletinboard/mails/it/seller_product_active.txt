@@ -1,0 +1,4 @@
+The seller added a new product!
+
+The seller {seller_name} added a new product:
+{product_reference} - {product_name} - {product_price}

@@ -1,0 +1,87 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-backend-15.css
+*
+*  Copyright: Copyright (c) 2010-2018 Vadim Jacobi
+*  License Agreement: http://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.13.0
+*  Date: 2018-09-14
+*  Review: 2018-09-14
+*  URL: http://www.ajax-zoom.com
+*  Demo: prestashop.ajax-zoom.com
+*  Documentation: http://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   http://www.ajax-zoom.com/index.php?cid=download
+*/
+
+.headingRight {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 10px;
+    /*background-color: #394049;*/
+    background: gradient(linear, center top ,center bottom, from(#F9F9F9), to(#ECECEC)) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, center top ,center bottom, from(#F9F9F9), to(#ECECEC)) repeat scroll 0 0 transparent;
+    border: #ccced7 1px solid;
+}
+
+.headingRight i.fa { 
+    margin: 0 !important;
+}
+
+#az_pairRows_module input,
+#az_pairRows_module textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttonRight {
+    height: 50px;
+}
+
+@media screen and (min-width : 1224px) { 
+    .paddingLeft260 { 
+        padding-left: 260px;
+    }
+    .marginLeft260 { 
+        margin-left: 260px;
+    }
+}
+
+#product-tab-content-ModuleAjaxzoom input,
+#product-tab-content-ModuleAjaxzoom select,
+#product-tab-content-ModuleAjaxzoom textarea,
+#product-tab-content-ModuleAjaxzoom option {
+    font-size: initial !important;
+}
+
+#product-tab-content-ModuleAjaxzoom .panel-body {
+    border-left: #ccced7 1px solid;
+    border-right: #ccced7 1px solid;
+    border-bottom: #ccced7 1px solid;
+    padding: 20px 10px 10px 10px;
+    box-sizing: border-box;
+    background-color: #FFF;
+}
+
+#az_submitSettings_360 {
+    margin-top: 10px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.az_active {
+    background-color: #FFFFE0;
+}
+
+.tooltipReplacement{
+    color: #7f7f7f;
+    font-family: Georgia,Arial,"sans-serif";
+    font-style: italic;
+    text-align: left;
+    padding-left: 260px;
+}

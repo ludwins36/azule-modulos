@@ -1,0 +1,63 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-frontend-17.css
+*
+*  Copyright: Copyright (c) 2010-2019 Vadim Jacobi
+*  License Agreement: https://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.19.0
+*  Date: 2019-04-30
+*  Review: 2019-04-30
+*  URL: https://www.ajax-zoom.com
+*  Demo: https://prestashop.ajax-zoom.com
+*  Documentation: https://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   https://www.ajax-zoom.com/index.php?cid=download
+*/
+
+#main .images-container,
+.page-content .images-container,
+.page-content .product-cover,
+.page-content .scroll-box-arrows, 
+.page-content .thumb-container {
+    display: none!important;
+}
+
+.page-content .product-cover img {
+    box-shadow: none!important;
+}
+
+.page-content .product-flags li {
+    z-index: 1002;
+    pointer-events: none;
+    margin-top: 3rem;
+}
+
+#product #content {
+    max-width: none;
+}
+
+#content-wrapper #main .col-md-6:first-child {
+    margin-bottom: 40px;
+}
+
+#az_wrapResetImages {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#az_wrapResetImages>i {
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+.azVideoIframe .video-js .vjs-big-play-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.az_fancybox .fancybox-overlay {
+    overflow: hidden!important;
+}

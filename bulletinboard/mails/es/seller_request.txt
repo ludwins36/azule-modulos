@@ -1,0 +1,5 @@
+Your account is activated!
+
+Hello {seller_name},
+We are pleased to announce that your account is
+activated. You can already start selling your articles on {shop_name}

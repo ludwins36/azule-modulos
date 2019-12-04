@@ -1,0 +1,112 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-backend-1.7.3.css
+*
+*  Copyright: Copyright (c) 2010-2018 Vadim Jacobi
+*  License Agreement: http://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.13.0
+*  Date: 2018-09-14
+*  Review: 2018-09-14
+*  URL: http://www.ajax-zoom.com
+*  Demo: prestashop.ajax-zoom.com
+*  Documentation: http://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   http://www.ajax-zoom.com/index.php?cid=download
+*/
+
+
+#module_ajaxzoom .panel {
+    position: relative;
+    display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+}
+
+#module_ajaxzoom .panel-heading:first-child {
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+#module_ajaxzoom .panel-heading {
+    padding: 0.75rem 1.25rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#module_ajaxzoom .panel-body {
+    padding: 1.25rem;
+}
+
+#module_ajaxzoom .form-group .form-control-label,
+#module_ajaxzoom .form-group .control-label {
+    color: #6C868E;
+    padding: 0 0 0.375rem 1.25rem;
+}
+
+#module_ajaxzoom .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: 100%;
+}
+
+#module_ajaxzoom .alert {
+    padding-right: 0.75rem;
+    padding-left: 4rem;
+}
+
+#module_ajaxzoom .btn-action {
+    color: #25b9d7;
+    background-color: transparent;
+    background-image: none;
+    border-color: #25b9d7;
+}
+
+#module_ajaxzoom .btn-action:focus {
+    border-width: 1px !important;
+}
+
+#module_ajaxzoom #file360-files-list .btn {
+    margin-left: 100px;
+}
+
+#module_ajaxzoom #file360-success {
+    width: 100%;
+}
+
+ #file360-success:before {
+    content: "";
+}
+
+#module_ajaxzoom #az_settings_video {
+    width: 100%;
+}
+
+#module_ajaxzoom label.control-label span.label-tooltip {
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+}
+
+
+#module_ajaxzoom .save-require:hover {
+    background-color: inherit !important;
+}
+
+.tooltipster-sidetip .tooltipster-box {
+    border: 0;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+    border-color: transparent;
+}
+
+#az_pairRows_module td {
+    position: relative;
+}

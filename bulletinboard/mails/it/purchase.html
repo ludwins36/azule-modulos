@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>[{shop_name}] Congratulations you have sold your product</title>
+</head>
+<body>
+	<table style="font-family:Verdana,sans-serif; font-size:16px; color:#374953; width: 550px;">
+		<tr>
+                <td align="left">
+                        <a href="{shop_url}" title="{shop_name}"><img alt="{shop_name}" src="{shop_logo}" style="border:none;" ></a>
+                </td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>Congratulations you have sold your product: <b>{product_name}</b></td></tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>
+		<table style="border:1px solid #D6D4D4; background-color: #ddf0de; padding: 8px;">
+		<tr><td>
+		<b>When will you pay?</b>
+        </td></tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>By PayPal:</td></tr>
+		<tr><td><ul>
+		<li>Fill in your Paypal address in the "Withdraw" section</li>
+        <li>It may take up to 5 days to appear on your account.</li>
+        <li>You will receive an e-mail from PayPal upon payment.</li>
+		</ul></td></tr>
+		<tr><td>&nbsp;</td></tr>
+        <tr><td>By bank transfer:</td></tr>
+        <tr><td><ul>
+        <li>Go to the "Withdraw" section in your seller account</li>
+        <li>Enter your IBAN code.</li>
+        <li>It may take up to 5 days to appear on your account.</li>
+        </ul></td></tr>
+        </table>
+        </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>Details of your payment:</b></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>
+        <table>
+        <tr><td style="padding: 6px;"><b>Price of your item:</b></td><td style="padding: 6px;">{product_price}</td></tr>
+        <tr><td style="border-bottom:2px solid #000; padding: 6px;"><b>Quantity:</b></td><td style="border-bottom:2px solid #000; padding: 6px;">{product_quantity}</td></tr>
+        <tr><td style="padding: 6px;"><b>Total Price:</b></td><td style="padding: 6px;">{product_total_price}</td></tr>
+        <tr><td style="border-bottom:2px solid #000; padding: 6px;"><b>Service charge:</b></td><td style="border-bottom:2px solid #000; padding: 6px;">{service_charge}</td></tr>
+        <tr><td style="padding: 6px;"><b>You earned:</b></td><td style="padding: 6px; color: red"><b>{product_sum}</b></td></tr>
+        </table>
+        </td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>Thank you for using {shop_name}!</td></tr>
+	</table>
+</body>
+</html>

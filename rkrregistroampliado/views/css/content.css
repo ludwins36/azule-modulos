@@ -1,0 +1,25 @@
+/*
+*
+* NOTICE OF LICENSE
+*
+* You are not authorized to modify, copy or redistribute this file.
+* Permissions are reserved by Rekire.com
+*
+* @author     Rekire - Tecnología web
+* @copyright  2018 Rekire.com All right reserved
+* @license    Rekire
+* @contact    info@rekire.com
+*
+*/
+
+.cr-subheading {
+  margin-top: 30px; }
+
+.c4y-cr-form.c4y-15 fieldset > p {
+  margin-top: 20px;
+  margin-bottom: 0; }
+.c4y-cr-form.c4y-15 fieldset .form_info {
+  padding: 2px 10px;
+  background-color: #f7f7f7;
+  margin-left: 187px;
+  border: 1px solid #fff; }

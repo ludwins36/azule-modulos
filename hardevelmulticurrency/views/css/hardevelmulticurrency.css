@@ -1,0 +1,98 @@
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both; }
+.hardevel_currency .field_group{
+    margin-bottom: 5px;
+}
+#hardevel_currency_filter{
+    margin:20px;
+}
+#hardevel_currency_filter div{
+    float: left;
+    margin-right: 15px;
+    line-height: 11px;
+}
+#hardevel_currency_filter label{
+    padding-right: 10px;
+    width: auto;
+    font-size: 13px;
+
+}
+
+#hardevel_products{
+    display: none;
+    margin-top: 50px;
+}
+#hardevel_products input[type=submit]{
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+#hardevel_products table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#hardevel_products table thead{
+    background-color: #eee;
+    font-size: 16px;
+    text-align: center;
+}
+#hardevel_products table td,#hardevel_products table th{
+   border: 1px solid #333;
+}
+#hardevel_products table td{
+    padding: 0 5px;
+    text-align: left;
+}
+#hardevel_products table td.combination{
+    padding: 5px 5px 5px 40px;
+    text-align: left;
+}
+#hardevel_products table td.price{
+    text-align: right;
+
+}
+#hardevel_products table td.price input{
+    width: 80px;
+    text-align: right;
+}
+#hardevel_products table td.img{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+#hardevel_products table td img{
+    max-width: 50px;
+    max-height: 50px;
+}
+#hardevel_products table .id_product{
+    width: 30px;
+}
+
+#hardevel_products table .photo{
+    width: 50px;
+}
+#hardevel_products table .currency,#hardevel_products table .reference{
+    width: 70px;
+}
+#hardevel_products table .price{
+    width: 100px;
+}
+#hardevel_products table .discont{
+    width: 100px;
+}
+#hardevel_products table .discont_type{
+    width: 100px;
+}
+
+.hardevel_currency .error{
+    margin-top: 50px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}

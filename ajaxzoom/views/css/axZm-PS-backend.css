@@ -1,0 +1,256 @@
+/**
+*  Module: jQuery AJAX-ZOOM for Prestashop, axZm-PS-backend.css
+*
+*  Copyright: Copyright (c) 2010-2018 Vadim Jacobi
+*  License Agreement: http://www.ajax-zoom.com/index.php?cid=download
+*  Version: 1.13.0
+*  Date: 2018-09-14
+*  Review: 2018-09-14
+*  URL: http://www.ajax-zoom.com
+*  Demo: prestashop.ajax-zoom.com
+*  Documentation: http://www.ajax-zoom.com/index.php?cid=docs
+*
+*  @author    AJAX-ZOOM <support@ajax-zoom.com>
+*  @copyright 2010-2018 AJAX-ZOOM, Vadim Jacobi
+*  @license   http://www.ajax-zoom.com/index.php?cid=download
+*/
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/awesome/fonts/fontawesome-webfont.eot?v=4.6.1');
+    src: url('../fonts/awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.1') format('embedded-opentype'), url('../fonts/awesome/fonts/fontawesome-webfont.woff2?v=4.6.1') format('woff2'), url('../fonts/awesome/fonts/fontawesome-webfont.woff?v=4.6.1') format('woff'), url('../fonts/awesome/fonts/fontawesome-webfont.ttf?v=4.6.1') format('truetype'), url('../fonts/awesome/fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.az_container .fa {
+    text-align: center;
+    font-style: normal;
+    font-weight: lighter;
+    text-decoration: none !important;
+    font-size: 120%;
+    box-sizing: border-box;
+    margin-right: 3px;
+}
+
+.az_container [class^="icon-"],
+#module_ajaxzoom [class^="icon-"] {
+    font-family: 'FontAwesome';
+    text-align: center;
+    font-style: normal;
+    font-weight: lighter;
+    text-decoration: none !important;
+    vertical-align: middle;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+ [class^="icon-"], 
+.az_container [class^="icon-"]:focus, 
+.az_container [class^="icon-"]:hover {
+    text-decoration: none !important;
+}
+
+#module_ajaxzoom .btn-link,
+#module_ajaxzoom .btn-link:focus,
+#module_ajaxzoom .btn-link:hover {
+    text-decoration: none !important;
+}
+
+#module_ajaxzoom .btn-action:focus{
+    background-color: transparent;
+    background-image: none;
+    border: 0.125rem solid #bbcdd2;
+    color: #25b9d7;
+    outline: 0;
+}
+
+#module_ajaxzoom div.row {
+    margin: 0;
+}
+
+#az_imageTableSetsRows .btn-small {
+    padding: 2px;
+    letter-spacing: normal;
+}
+
+#az_imageTableSetsRows .btn-small i {
+    margin-right: 5px;
+    font-size: inherit;
+}
+
+#az_imageTableSets,
+#az_videosTable,
+#imageTable360 {
+    width: 100%;
+}
+
+#az_imageTableSets .img-thumbnail,
+#az_videosTable .img-thumbnail {
+    border-color: #bbcdd2;
+}
+
+#product-tab-content-ModuleAjaxzoom .row {
+    background: none;
+}
+
+.save-require {
+    background-color: yellow !important;
+    background: yellow !important;
+    color: #999999;
+}
+
+.save-require:hover {
+    background-color: #00aff0 !important;
+}
+
+.pull-right {
+    float: right;
+}
+
+.link_add_option {
+    margin-bottom: 10px;
+    width: 100%;
+}
+.link_add {
+    margin-bottom: 7px;
+}
+
+.link_textarea_option, .link_remove_option,
+.link_textarea_option_video, .link_remove_option_video,
+.link_textarea_option_module, .link_remove_option_module {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+a[class^="link_textarea_option"] {
+    margin-left: 5px;
+}
+
+.card:first-child {
+    margin-top: 0.75rem;
+}
+
+.icon-eye::before {
+    content: "";
+}
+
+.icon-image::before {
+    content: "";
+}
+
+.icon-map-marker::before {
+    content: "";
+}
+
+.icon-sitemap::before {
+    content: "";
+}
+
+.icon-briefcase::before {
+    content: "";
+}
+
+.icon-trash::before {
+    content: "";
+}
+
+.icon-pencil::before {
+    content: "";
+}
+
+.icon-plus::before {
+    content: "";
+}
+
+.icon-minus::before {
+    content: "";
+}
+
+.icon-AdminParentPreferences:before {
+    content: "";
+}
+
+#az_pairRows_360 input,
+#az_pairRows_360 textarea,
+#az_pairRows_video input,
+#az_pairRows_video textarea,
+#az_pairRows_module input,
+#az_pairRows_module textarea {
+    margin-bottom: 3px !important;
+}
+
+#az_pairRows_360 textarea,
+#az_pairRows_video textarea,
+#az_pairRows_module textarea {
+    resize: vertical !important;
+}
+
+#az_pairRows_360 i,
+#az_pairRows_video i,
+#az_pairRows_module i {
+    font-size: 150%;
+}
+
+#az_pairRows_360 tr td:last-child,
+#az_pairRows_video tr td:last-child,
+#az_pairRows_module tr td:last-child {
+    white-space: nowrap;
+}
+
+body.az_fancybox,
+body.az_fancybox .fancybox-overlay {
+    overflow: hidden !important;
+}
+
+#az_imageTableSets {
+    width: 100%;
+}
+
+#product-tab-content-ModuleAjaxzoom .row{
+    background: none;
+}
+
+.az_container .form-group {
+    padding: 5px;
+}
+
+#file360-success {
+    margin-top: 50px;
+}
+
+.az_container .btn-action {
+    min-width: 150px;
+}
+
+.az_loading {
+    display: inline; /*ie6 bug*/
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+@keyframes az_loading {
+    to {transform: rotate(360deg);}
+}
+
+.az_loading:before {
+    content: '';
+    box-sizing: border-box !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #2379b5;
+    animation: az_loading .6s linear infinite;
+}
+
+#module_ajaxzoom #file360 {
+    visibility: hidden;
+}

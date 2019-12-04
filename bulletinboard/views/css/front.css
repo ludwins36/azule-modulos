@@ -1,0 +1,260 @@
+/**
+* 2007-2015 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2015 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+
+h1.block_header {
+	padding-bottom: 14px;
+}
+
+#main_profile {
+    background-color: #ddf0de;	
+    padding: 14px;
+    margin-bottom: 15px;
+}
+
+.seller_logo{
+	border-radius: 50%;
+    overflow: hidden;
+    width: 150px;
+    margin: 0 auto;
+}
+
+#bb_user_info{
+    line-height: 2;
+}
+
+.seller_description{
+    margin-left: 8px;
+}
+
+.bb_user_icon{
+	float: left;
+	width: 30px;
+	margin-right: 6px;
+}
+
+
+.market_16 #bb_user_info span:BEFORE {
+	position: absolute;
+    top: 14px;
+    display: block;
+    height: 25px;
+    width: 25px;
+    color: #92d097;
+    left: 10px;
+    font: normal normal normal 32px/1.2 FontAwesome;
+    content: "\f007";
+}
+
+#seller_account.tab-content{
+    padding-left: 0;	
+}
+
+#seller_products td, #seller_products th, #seller_products td a{
+	font-size: 14px;
+}
+
+.customer_form_add h3:not(.modal-title), .customer_form_add .panel-heading {
+	border: none;
+    font-size: 1.2em;
+    line-height: 2.2em;
+    height: 2.2em;
+    text-transform: uppercase;
+    border-bottom: solid 1px #eee;
+    padding: 0 0 0 5px;
+    margin: -20px -16px 15px -16px;
+    font-size: 12px;
+}
+
+.customer_form_add .panel {
+	position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: solid 1px #d3d8db;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.customer_form_add .control-label{
+	font-size: 13px;
+    font-weight: normal;
+    color: #666;
+}
+
+.customer_form_add .translatable-field{
+	margin-left: -15px
+}
+
+.form-group #price, .form-group #quantity, .form-group #reference{
+	width: 150px;
+}
+
+.textarea-autosize{
+	width: 100%;
+	height:100px;
+	border: 1px solid #d6d4d4;
+}
+
+.product_list_note{
+	display: block;
+	position: absolute;
+	bottom: 4px;
+	text-align: center;
+	width: 100%;
+}
+
+ul.product_list.grid > li .product-container .functional-buttons{
+	padding-bottom: 24px;
+}
+
+.wait_p{
+	color: #f2b684;
+	font-size: 26px;
+}
+
+.active_p{
+	color: #55c65e;
+	font-size: 22px;
+}
+
+.customer_form_add  select{
+	padding: 4px 0;
+    width: 150px;
+    border: 1px solid #d6d4d4;
+}
+
+.agree_label, .form_agree .checker{
+	float: left;
+
+}
+
+.agree_label{
+    display: block;
+    line-height: 1;	
+    margin-bottom: 24px;
+}
+
+.agree_label a{
+	text-decoration: underline;
+	color: #fe7a0d;
+}
+
+.submitAgree{
+	background: #488e4a;
+	    display: block;
+    clear: both;
+    color: #fff;
+    padding: 14px 24px;
+}
+
+.chb_agree{
+	float: left;
+    margin-right: 5px;
+}
+
+.hidden{
+	display: none;
+}
+
+.note_balanse{
+	background: #c6c6c6;
+	color: #fff;
+    border-radius: 15px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 1.7;
+    margin-left: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*
+*
+*/
+.profile-usermenu {
+  margin: 30px 0;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.nav-item a.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 4px;
+  width: 100%;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li .active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li .active {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+.shop_descr_wr{
+	padding-left: 0;
+}
+
+@media (max-width: 639px) {
+	#seller_products td, #seller_products th, #seller_products td a {
+		font-size: 0.6rem;
+    	padding: 0.3rem;
+	}
+}
+
+#seller_account .paging-container b, #seller_account .paging-container a{
+	display: inline-block;
+padding: 6px 12px;
+    border: 1px solid;
+    margin: 2px 0px 14px;
+}
+
+#seller_page .pagination .page-list b, #seller_page .pagination .page-list a{
+	padding: 6px 12px;	
+}

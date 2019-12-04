@@ -1,0 +1,6 @@
+
+[{shop_url}]
+
+Se acaba de instalar el módulo RKR Registro ampliado en la tienda {shop_name}
+
+{shop_name} [{shop_url}]

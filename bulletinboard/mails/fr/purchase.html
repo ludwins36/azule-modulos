@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>[{shop_name}] F&eacute;licitations vous avez vendu votre article</title>
+</head>
+<body>
+    <table style="font-family:Verdana,sans-serif; font-size:16px; color:#374953; width: 550px;">
+        <tr>
+                <td align="left">
+                        <a href="{shop_url}" title="{shop_name}"><img alt="{shop_name}" src="{shop_logo}" style="border:none;" ></a>
+                </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>F&eacute;licitations vous avez vendu votre article: <b>{product_name}</b></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>
+        <table style="border:1px solid #D6D4D4; background-color: #ddf0de; padding: 8px;">
+        <tr><td>
+        <b>Quand serez-vous payer? </b>
+        </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>Soit par PayPal:</td></tr>
+        <tr><td><ul>
+        <li>Renseignez votre adresse Paypal dans la section &laquo;Demander virement&raquo;</li>
+        <li>Cela peut prendre 5 jours pour appara&icirc;tre sur votre compte.</li>
+        <li>Vous recevrez un mail de PayPal lors du paiement.</li>
+        </ul></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>Soit par virement bancaire:</td></tr>
+        <tr><td><ul>
+        <li>Rendez-vous dans votre compte, espace vendeur, section "Demander virement"</li>
+        <li>Renseignez votre code IBAN.</li>
+        <li>Cela peut prendre 5 jours pour apparaitre sur votre compte.</li>
+        </ul></td></tr>
+        </table>
+        </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>D&eacute;tail de votre paiement:</b></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>
+        <table>
+        <tr><td style="padding: 6px;"><b>Prix de votre article:</b></td><td style="padding: 6px;">{product_price}</td></tr>
+        <tr><td style="border-bottom:2px solid #000; padding: 6px;"><b>Quantit&eacute;:</b></td><td style="border-bottom:2px solid #000; padding: 6px;">{product_quantity}</td></tr>
+        <tr><td style="padding: 6px;"><b>Total article:</b></td><td style="padding: 6px;">{product_total_price}</td></tr>
+        <tr><td style="border-bottom:2px solid #000; padding: 6px;"><b>Frais de service:</b></td><td style="border-bottom:2px solid #000; padding: 6px;">{service_charge}</td></tr>
+        <tr><td style="padding: 6px;"><b>Votre paiement:</b></td><td style="padding: 6px; color: red"><b>{product_sum}</b></td></tr>
+        </table>
+        </td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>Merci d&#039;avoir utiliser {shop_name}!</td></tr>
+    </table>
+</body>
+</html>
+            
+
+

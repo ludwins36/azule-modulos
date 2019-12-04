@@ -1,0 +1,3 @@
+[{shop_name}] Félicitations vous avez vendu votre article
+
+Félicitations vous avez vendu votre article: {product_name}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>vexurbaner</name>
+    <displayName><![CDATA[Urbaner]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[rastrea tus productos de forma facil y rapida]]></description>
+    <author><![CDATA[Vex_soluciones]]></author>
+    <tab><![CDATA[shipping_logistics]]></tab>
+	<confirmUninstall><![CDATA[esta seguro que desea desistalar el modulo]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

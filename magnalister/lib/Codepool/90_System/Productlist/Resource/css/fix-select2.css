@@ -1,0 +1,36 @@
+
+body.magna .ml-searchable-select {
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+}
+
+body.magna .select2-container--default .select2-selection--single {
+  border-radius: 0;
+}
+
+body.magna .select2-dropdown {
+  border-radius: 0;
+}
+
+body.magna .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 23px;
+}
+
+body.magna .select2-container .select2-selection--single {
+  line-height: 23px;
+  height: 23px;
+}
+
+body.magna .select2-container {
+  margin-top: -5px;
+}
+
+body.magna .select2-container--open .select2-dropdown--above,
+body.magna .select2-container--open .select2-dropdown--below {
+  margin-top: 5px;
+}
+
+body.magna .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 23px;
+}
