@@ -42,6 +42,8 @@
         </button>
       </div>
       <div class="modal-body">
+        <p> Arrastra el punto rojo para confirmar tu dirección de envío.
+        </p>
         <div class='col-lg-10'>
             <input type='text' style="width: 60%; margin-bottom: 10px;" placeholder="Escriba su nueva dirección" id="new_address_modal"  name='new_address_modal' />
         </div>	
