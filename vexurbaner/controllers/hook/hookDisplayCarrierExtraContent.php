@@ -59,8 +59,6 @@ class VexUrbanerhookDisplayCarrierExtraContentController
             $dat = $this->context->cookie->dataRequesUrbanes;
             $dat = json_decode($dat);
             $store = Vex_Request_Sql::getStoreWsId($dat[0]->id_order);
-            print_r($dat[0]->id_order);
-            print_r(var_dump($dat));
             $this->context->smarty->assign(
                 array(
                     'address'    => $data['address'],
