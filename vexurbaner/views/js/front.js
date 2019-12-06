@@ -1,5 +1,4 @@
 
-let map;
 let directionsDisplay;
 function initMapUrbaner() {
 	let input = document.getElementById('new_address');
@@ -9,23 +8,23 @@ function initMapUrbaner() {
 
 	let latlng = new google.maps.LatLng(lat, lnt)
 
-	this.map = new google.maps.Map(document.getElementById('map'), {
+	let map = new google.maps.Map(document.getElementById('map'), {
 		center: latlng,
 		zoom: 12
 	});
 
 	let destination = new google.maps.Marker({
         draggable: true,
-        map: this.map,
+        map: map,
         position: latlng,
         label: 'TU',
         title: 'destinatario'
 
     });
 
-    directionsDisplay = new google.maps.DirectionsRenderer({
+    let directionsDisplay = new google.maps.DirectionsRenderer({
         draggable: true,
-        map: this.map,
+        map: map,
         suppressMarkers: true
     });
 

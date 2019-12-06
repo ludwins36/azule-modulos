@@ -51,16 +51,24 @@ class VexUrbanerhookDisplayCarrierExtraContentController
         $apiMpas = Configuration::get(VexUrbaner::CONFIG_KEY_GOOGLE_MAPS);
         $coor = json_decode($this->context->cookie->latLonUrbaner);
 
+
         if (empty($apiMpas)) {
             return false;
         }
         if (!empty($coor)) {
+            $data = $this->context->cookie->dataRequesUrbanes;
+            $data = json_decode($data);
+            print_r(var_dump($data));
+            $store = Vex_Request_Sql::getStoreWsId($data[0]->id_order);
             $this->context->smarty->assign(
                 array(
                     'address'    => $data['address'],
                     'apiGoogle'  => $apiMpas,
                     'lat'        => $coor->lat,
-                    'lnt'        => $coor->lnt
+                    'lnt'        => $coor->lnt,
+                    'latS'       => $store['lat'],
+                    'lntS'       => $store['lnt'],
+                    'image' => ' ../modules/' . $this->module->name . '/views/img/store.jpg'
 
                 )
             );
