@@ -238,18 +238,21 @@ class VexUrbanerRequest
     public function sendEMail($id, $idWsl)
     {
         $store = Vex_Request_Sql::getStoreWsId($idWsl);
-        // $productDescription = '';
-        // $ordes_products = array();
-        // $cart = new Cart($id);
-        // foreach($cart->getProducts() as $product){
-        //     $prod = Vex_Request_Sql::getProduct($product['id_product']);
-        //     if($prod['id_ws_seller'] == $idWsl){
-        //         $val = $prod['id_ws_seller'];
-        //         array_push($ordes_products, $val);
+        $productDescription = '';
+        $ordes_products = array();
+        $cart = new Cart($id);
+        foreach ($cart->getProducts() as $product) {
+            $prod = Vex_Request_Sql::getProduct($product['id_product']);
+            if ($prod['id_ws_seller'] == $idWsl) {
+                $val = array(
+                    'count' => $product['cart_quantity'],
+                    'name'  => $product['name'],
+                    'price' => $product['total_wt']
+                );
 
-        //     }
-
-        // }
+                array_push($ordes_products, $val);
+            }
+        }
 
 
         $vars = array(
