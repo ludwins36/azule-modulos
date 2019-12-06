@@ -94,6 +94,7 @@ jQuery(document).ready(function() {
     }
 
     var l = document.getElementById('lnk-azule-kids');
+    console.log(l);
     if(typeof l === 'undefined' || l == null){
         return;
     }
