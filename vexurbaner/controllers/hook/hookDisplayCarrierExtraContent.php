@@ -72,7 +72,7 @@ class VexUrbanerhookDisplayCarrierExtraContentController
                 )
             );
 
-            return $this->module->display($this->file, 'views/templates/hook/displayCarrierExtraContent.tpl');
+            // return $this->module->display($this->file, 'views/templates/hook/displayCarrierExtraContent.tpl');
         }
     }
 }
