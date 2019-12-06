@@ -40,7 +40,8 @@ function initMapUrbaner() {
 }
 
 jQuery(document).ready(function() {
-    if(lat == undefined || lat == ''){
+    console.log(typeof lat);
+    if(typeof lat === 'undefined'){
         return;
     }
     console.log(apiGoogle);
