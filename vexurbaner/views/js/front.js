@@ -6,7 +6,7 @@ function initMapUrbaner() {
 
 	// var zoomap = vex_glovo_script.zoomap;
 
-	let latlng = new google.maps.LatLng(lat, lng)
+	let latlng = new google.maps.LatLng(lat, lnt)
 
 	this.map = new google.maps.Map(document.getElementById('map'), {
 		center: latlng,
