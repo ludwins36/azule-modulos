@@ -83,8 +83,8 @@ jQuery(document).ready(function() {
         return;
     }
 
-    l.children[0].innerHTML = '<label><span style="color: blue;">AZULE<span><span style="color: red;"> KIDS<span></label>';
-    
+    l.children[0].innerHTML = '<label><span style="color: blue;"><b>AZULE KIDS</b></span></label>';
+
     if(typeof lat === 'undefined'){
         return;
     }
