@@ -57,7 +57,7 @@ class VexUrbanerhookDisplayCarrierExtraContentController
         }
         if (!empty($coor)) {
             $dat = $this->context->cookie->dataRequesUrbanes;
-            $dat = json_decode($data);
+            $dat = json_decode($dat);
             $store = Vex_Request_Sql::getStoreWsId($dat[0]->id_order);
             print_r($dat[0]->id_order);
             print_r(var_dump($dat));
