@@ -84,8 +84,8 @@ jQuery(document).ready(function() {
         return;
     }
 
-    l.children[0].innerHTML = '<label><span style="color: blue;"><b>AZULE KIDS</b></span></label>';
-    r.children[0].innerHTML = '<label><span style="color: red;"><b>REGALOS</b></span></label>';
+    l.children[0].innerHTML = '<label><span style="color: #1c3360">AZULE KIDS</span></label>';
+    r.children[0].innerHTML = '<label><span style="color: #cc4c27;">REGALOS</span></label>';
 
     if(typeof lat === 'undefined'){
         return;
