@@ -7,13 +7,13 @@ function initMapUrbaner() {
 	// var zoomap = vex_glovo_script.zoomap;
 
 	let end = new google.maps.LatLng(lat, lnt)
+    let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
 
 	let map = new google.maps.Map(document.getElementById('map'), {
 		center: latlng,
 		zoom: 12
     });
     let directionsService = new google.maps.DirectionsService();
-    let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
     let image = {
 		url: image
 	};
