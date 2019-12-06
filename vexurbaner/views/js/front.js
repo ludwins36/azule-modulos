@@ -48,6 +48,7 @@ function initMapUrbaner() {
         displayRoute(latlng, event.latLng, directionsService, directionsDisplay);
         let location = directionsDisplay.getDirections();
         location = location.routes[0].legs[0].end_address;
+        console.log(location);
         input.value = location;
         input2.value = location;
 
