@@ -78,12 +78,14 @@ function displayRoute(origin, destination, service, display) {
 
 jQuery(document).ready(function() {
     var l = document.getElementById('lnk-azule-kids');
+    var r = document.getElementById('category-11');
     console.log(l);
     if(typeof l === 'undefined' || l == null){
         return;
     }
 
     l.children[0].innerHTML = '<label><span style="color: blue;"><b>AZULE KIDS</b></span></label>';
+    r.children[0].innerHTML = '<label><span style="color: red;"><b>REGALOS</b></span></label>';
 
     if(typeof lat === 'undefined'){
         return;
