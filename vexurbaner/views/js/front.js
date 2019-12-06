@@ -22,8 +22,8 @@ function initMapUrbaner() {
 
 	new google.maps.Marker({
 		position: latlng,
-		map: this.map,
-		icon: img,
+		map: map,
+		icon: image,
 		title: 'Tienda'
 	});
 
@@ -47,8 +47,8 @@ function initMapUrbaner() {
         displayRoute(latlng, event.latLng, directionsService, directionsDisplay);
         let location = directionsDisplay.getDirections();
         location = location.routes[0].legs[0].end_address;
-        input.value = location.routes[0].legs[0].end_address;
-        input2.value = location.routes[0].legs[0].end_address;
+        input.value = location;
+        input2.value = location;
 
     });
 
