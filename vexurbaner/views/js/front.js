@@ -32,8 +32,7 @@ function initMapUrbaner() {
     destination.addListener('dragend', (event) => {
         console.log(directionsDisplay);
         
-        let address = directionsDisplay.getDirections();
-        console.log(address);
+        console.log(directionsDisplay.getDirections());
 
         // input.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
         // input2.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
