@@ -27,7 +27,7 @@
 <div class='form-group'>
 			<label class='control-label col-lg-3 required' >{l s='Direccón a enviar' mod='vexurbaner'}</label>
             <div class='col-lg-12'>
-                <input type='text' id="new_address"  name='new_address' value='{$address|escape:'htmlall':'UTF-8'}'/>
+                <input type='text' id="new_address" style="width: 60%; margin-bottom: 10px;"  name='new_address' value='{$address|escape:'htmlall':'UTF-8'}'/>
             </div>			
     <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button>
 </div>

@@ -6,9 +6,9 @@ function initMapUrbaner() {
 
 	// var zoomap = vex_glovo_script.zoomap;
 
-	let end = new google.maps.LatLng(lat, lnt)
-    console.log(latS);
-    console.log(lntS);
+    let end = new google.maps.LatLng(lat, lnt)
+    new google.maps.places.Autocomplete(input);
+    new google.maps.places.Autocomplete(input2);
     let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
 
 	let map = new google.maps.Map(document.getElementById('map'), {
@@ -18,13 +18,17 @@ function initMapUrbaner() {
     let directionsService = new google.maps.DirectionsService();
     
     let img = {
-		url: image
+        url: image,
+        size: new google.maps.Size(80, 100),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(60, 60)
 	};
 
 	new google.maps.Marker({
 		position: latlng,
 		map: map,
-		icon: image,
+		icon: img,
 		title: 'Tienda'
 	});
 
@@ -44,17 +48,11 @@ function initMapUrbaner() {
         suppressMarkers: true
     });
 
-    console.log(input);
-    console.log(input2);
-
     destination.addListener('dragend', (event) => {
         displayRoute(latlng, event.latLng, directionsService, directionsDisplay);
         let location = directionsDisplay.getDirections();
         location = location.routes[0].legs[0].end_address;
-        console.log(location);
-        console.log(input);
-        console.log(input2);
-        // input.value = location;
+        input.value = location;
         input2.value = location;
 
     });
