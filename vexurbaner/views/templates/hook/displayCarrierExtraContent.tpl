@@ -58,5 +58,6 @@
 
     let lat = "{$lat}";
     let lnt = "{$lnt}";
+    let apiGoogle = "{$apiGoogle}"
   
 </script>

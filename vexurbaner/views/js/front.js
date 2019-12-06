@@ -49,7 +49,7 @@ jQuery(document).ready(function() {
     if (typeof google === 'undefined') {
         let script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + {$apiGoogle} + '&libraries=places&sensor=false&callback=initMapUrbaner';
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiGoogle + '&libraries=places&sensor=false&callback=initMapUrbaner';
         document.head.appendChild(script);
 
     } else {
