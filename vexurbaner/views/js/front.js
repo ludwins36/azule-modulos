@@ -44,6 +44,9 @@ function initMapUrbaner() {
         suppressMarkers: true
     });
 
+    console.log(input);
+    console.log(input2);
+
     destination.addListener('dragend', (event) => {
         displayRoute(latlng, event.latLng, directionsService, directionsDisplay);
         let location = directionsDisplay.getDirections();
