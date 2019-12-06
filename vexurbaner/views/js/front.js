@@ -7,6 +7,8 @@ function initMapUrbaner() {
 	// var zoomap = vex_glovo_script.zoomap;
 
 	let end = new google.maps.LatLng(lat, lnt)
+    console.log(latS);
+    console.log(lntS);
     let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
 
 	let map = new google.maps.Map(document.getElementById('map'), {
@@ -14,14 +16,14 @@ function initMapUrbaner() {
 		zoom: 12
     });
     let directionsService = new google.maps.DirectionsService();
-    let image = {
+    let img = {
 		url: image
 	};
 
 	new google.maps.Marker({
 		position: new google.maps.LatLng(latInit, lngInit),
 		map: this.map,
-		icon: image,
+		icon: img,
 		title: 'Tienda'
 	});
 
