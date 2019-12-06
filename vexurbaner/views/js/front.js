@@ -77,7 +77,14 @@ function displayRoute(origin, destination, service, display) {
 }
 
 jQuery(document).ready(function() {
-    console.log(typeof lat);
+    var l = document.getElementById('lnk-azule-kids');
+    console.log(l);
+    if(typeof l === 'undefined' || l == null){
+        return;
+    }
+
+    l.children[0].innerHTML = '<label><span style="color: blue;">AZULE<span><span style="color: red;"> KIDS<span></label>';
+    
     if(typeof lat === 'undefined'){
         return;
     }
@@ -93,12 +100,6 @@ jQuery(document).ready(function() {
         initMapUrbaner();
     }
 
-    var l = document.getElementById('lnk-azule-kids');
-    console.log(l);
-    if(typeof l === 'undefined' || l == null){
-        return;
-    }
-
-    l.children[0].innerHTML = '<label><span style="color: blue;">AZULE<span><span style="color: red;"> KIDS<span></label>';
+    
 
 });
