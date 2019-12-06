@@ -21,7 +21,7 @@ function initMapUrbaner() {
 	};
 
 	new google.maps.Marker({
-		position: new google.maps.LatLng(latInit, lngInit),
+		position: latlng,
 		map: this.map,
 		icon: img,
 		title: 'Tienda'
