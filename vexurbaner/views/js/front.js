@@ -81,7 +81,7 @@ jQuery(document).ready(function() {
     if(typeof lat === 'undefined'){
         return;
     }
-    console.log(apiGoogle);
+    
 
     if (typeof google === 'undefined') {
         let script = document.createElement('script');
@@ -92,5 +92,12 @@ jQuery(document).ready(function() {
     } else {
         initMapUrbaner();
     }
+
+    var l = document.getElementById('lnk-azule-kids');
+    if(typeof l === 'undefined' || l == null){
+        return;
+    }
+
+    l.children[0].innerHTML = '<label><span style="color: blue;">AZULE<span><span style="color: red;"> KIDS<span></label>';
 
 });
