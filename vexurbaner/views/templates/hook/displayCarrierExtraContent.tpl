@@ -24,6 +24,4 @@
 *}
 
 
-<div class='alert alert-danger' id='error-urbaner' role='alert'>
-    {l s='Urbaner no disponible para esta dirección.' mod='vexurbaner'}
-</div>
+<h2>hola</h2>
