@@ -240,6 +240,7 @@ class VexUrbanerRequest
         $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $productDescription = '';
         $ordes_products = array();
+        $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
         $cart = new Cart($id);
         foreach ($cart->getProducts() as $product) {
             $prod = Vex_Request_Sql::getProduct($product['id_product']);
@@ -254,12 +255,18 @@ class VexUrbanerRequest
             }
         }
 
+        if (is_array($ordes_products && count($ordes_products) > 0)) {
+            foreach ($ordes_products as $order) {
+                $message .= $order['count'] . ' ' . $order['name'] . ' por un total de $' . $order['price'] . ', ';
+            }
+        }
+
 
         $vars = array(
             '{firstname}' => $store['persone'],
             '{lastname}' => $store['name_ws'],
             '{order_name}' => 'Urbaner',
-            '{message}' => 'Se ha generado una orden de envío, de Urbaner.',
+            '{message}' => $message,
         );
         Mail::Send(
             (int) Context::getContext()->language->id,
