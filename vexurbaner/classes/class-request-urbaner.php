@@ -235,9 +235,23 @@ class VexUrbanerRequest
         return $result;
     }
 
-    public function sendEMail($id)
+    public function sendEMail($id, $idWsl)
     {
-        $store = Vex_Request_Sql::getStoreWsId($id);
+        $store = Vex_Request_Sql::getStoreWsId($idWsl);
+        // $productDescription = '';
+        // $ordes_products = array();
+        // $cart = new Cart($id);
+        // foreach($cart->getProducts() as $product){
+        //     $prod = Vex_Request_Sql::getProduct($product['id_product']);
+        //     if($prod['id_ws_seller'] == $idWsl){
+        //         $val = $prod['id_ws_seller'];
+        //         array_push($ordes_products, $val);
+
+        //     }
+
+        // }
+
+
         $vars = array(
             '{firstname}' => $store['persone'],
             '{lastname}' => $store['name_ws'],

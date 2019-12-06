@@ -44,6 +44,7 @@ class VexUrbanerhookActionCarrierProcessController
     {
         $cart = new Cart($this->context->cart->id);
         $products = $cart->getProducts();
+        print_r($products);
         $pricesGeneral = 0;
         $dataOrders = array();
 
