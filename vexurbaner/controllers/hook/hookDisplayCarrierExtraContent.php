@@ -60,7 +60,7 @@ class VexUrbanerhookDisplayCarrierExtraContentController
                     'address'    => $data['address'],
                     'apiGoogle'  => $apiMpas,
                     'lat'        => $coor->lat,
-                    'lng'        => $coor->lnt
+                    'lnt'        => $coor->lnt
 
                 )
             );

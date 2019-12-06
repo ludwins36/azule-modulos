@@ -1,9 +1,6 @@
 
 let map;
-function initMapGlovo() {
-	verificGlovo();
-	latInit = vex_glovo_script.latInit;
-	lngInit = vex_glovo_script.longInit;
+function initMapUrbaner() {
 	let input = document.getElementById('new_address');
 	let input2 = document.getElementById('new_address_modal');
 
@@ -43,3 +40,20 @@ function initMapGlovo() {
 
 	
 }
+
+jQuery(document).ready(function() {
+    if(lat == undefined || lat == ''){
+        return;
+    }
+
+    if (typeof google === 'undefined') {
+        let script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + {$apiGoogle} + '&libraries=places&sensor=false&callback=initMapUrbaner';
+        document.head.appendChild(script);
+
+    } else {
+        initMapUrbaner();
+    }
+
+});
