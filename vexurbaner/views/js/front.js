@@ -7,8 +7,8 @@ function initMapUrbaner() {
 	// var zoomap = vex_glovo_script.zoomap;
 
     let end = new google.maps.LatLng(lat, lnt)
-    new google.maps.places.Autocomplete(input);
-    new google.maps.places.Autocomplete(input2);
+    let a = new google.maps.places.Autocomplete(input);
+    let b = new google.maps.places.Autocomplete(input2);
     let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
 
 	let map = new google.maps.Map(document.getElementById('map'), {

@@ -43,7 +43,7 @@
       </div>
       <div class="modal-body">
         <div class='col-lg-10'>
-            <input type='text' placeholder="Escriba su nueva dirección" id="new_address_modal"  name='new_address_modal' />
+            <input type='text' style="width: 60%; margin-bottom: 10px;" placeholder="Escriba su nueva dirección" id="new_address_modal"  name='new_address_modal' />
         </div>	
         <div id="map"></div>
       </div>
