@@ -29,10 +29,8 @@ function initMapUrbaner() {
     });
 
     destination.addListener('dragend', (event) => {
-        let location = directionsDisplay.getDirections();
-        location = location.routes[0].legs[0].end_address;
-        input.value = location;
-        input2.value = location;
+        input.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
+        input2.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
 
     });
 
