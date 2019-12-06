@@ -30,8 +30,10 @@ function initMapUrbaner() {
     });
 
     destination.addListener('dragend', (event) => {
-        input.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
-        input2.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
+        console.log(event);
+
+        // input.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
+        // input2.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
 
     });
 
