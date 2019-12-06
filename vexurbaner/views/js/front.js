@@ -16,7 +16,7 @@ function initMapUrbaner() {
 	let destination = new google.maps.Marker({
         draggable: true,
         map: this.map,
-        position: end,
+        position: latlng,
         label: 'TU',
         title: 'destinatario'
 
