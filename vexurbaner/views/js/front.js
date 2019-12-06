@@ -16,6 +16,7 @@ function initMapUrbaner() {
 		zoom: 12
     });
     let directionsService = new google.maps.DirectionsService();
+    
     let img = {
 		url: image
 	};
@@ -31,7 +32,7 @@ function initMapUrbaner() {
 	let destination = new google.maps.Marker({
         draggable: true,
         map: map,
-        position: latlng,
+        position: end,
         label: 'TU',
         title: 'destinatario'
 
