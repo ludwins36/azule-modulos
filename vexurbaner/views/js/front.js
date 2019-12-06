@@ -1,5 +1,6 @@
 
 let map;
+let directionsDisplay;
 function initMapUrbaner() {
 	let input = document.getElementById('new_address');
 	let input2 = document.getElementById('new_address_modal');
@@ -22,7 +23,7 @@ function initMapUrbaner() {
 
     });
 
-    let directionsDisplay = new google.maps.DirectionsRenderer({
+    directionsDisplay = new google.maps.DirectionsRenderer({
         draggable: true,
         map: this.map,
         suppressMarkers: true
