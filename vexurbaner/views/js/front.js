@@ -45,6 +45,7 @@ jQuery(document).ready(function() {
     if(lat == undefined || lat == ''){
         return;
     }
+    console.log(apiGoogle);
 
     if (typeof google === 'undefined') {
         let script = document.createElement('script');
