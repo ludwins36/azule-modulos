@@ -6,12 +6,25 @@ function initMapUrbaner() {
 
 	// var zoomap = vex_glovo_script.zoomap;
 
-	let latlng = new google.maps.LatLng(lat, lnt)
+	let end = new google.maps.LatLng(lat, lnt)
 
 	let map = new google.maps.Map(document.getElementById('map'), {
 		center: latlng,
 		zoom: 12
+    });
+    let directionsService = new google.maps.DirectionsService();
+    let latlng = new google.maps.LatLng(parseFloat(latS), parseFloat(lntS));
+    let image = {
+		url: image
+	};
+
+	new google.maps.Marker({
+		position: new google.maps.LatLng(latInit, lngInit),
+		map: this.map,
+		icon: image,
+		title: 'Tienda'
 	});
+
 
 	let destination = new google.maps.Marker({
         draggable: true,
@@ -29,18 +42,31 @@ function initMapUrbaner() {
     });
 
     destination.addListener('dragend', (event) => {
-        console.log(directionsDisplay);
-        
-        console.log(directionsDisplay.getDirections());
-
-        // input.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
-        // input2.value = directionsDisplay.getDirections().routes[0].legs[0].end_address;
+        displayRoute(latlng, event.latLng, directionsService, directionsDisplay);
+        let location = directionsDisplay.getDirections();
+        location = location.routes[0].legs[0].end_address;
+        input.value = location.routes[0].legs[0].end_address;
+        input2.value = location.routes[0].legs[0].end_address;
 
     });
 
 	
-
+    displayRoute(latlng, end, directionsService, directionsDisplay);
 	
+}
+
+function displayRoute(origin, destination, service, display) {
+	service.route({
+		origin: origin,
+		destination: destination,
+		travelMode: google.maps.DirectionsTravelMode.DRIVING,
+		unitSystem: google.maps.UnitSystem.METRIC
+	}, function (response, status) {
+		if (status === 'OK') {
+			display.setDirections(response);
+
+		}
+	});
 }
 
 jQuery(document).ready(function() {

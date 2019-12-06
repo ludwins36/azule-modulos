@@ -26,7 +26,7 @@
 
 <div class='form-group'>
 			<label class='control-label col-lg-3 required' >{l s='Direccón a enviar' mod='vexurbaner'}</label>
-            <div class='col-lg-10'>
+            <div class='col-lg-12'>
                 <input type='text'  name='new_address' value='{$address|escape:'htmlall':'UTF-8'}'/>
             </div>			
     <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button>
@@ -59,5 +59,8 @@
     let lat = "{$lat}";
     let lnt = "{$lnt}";
     let apiGoogle = "{$apiGoogle}"
+    let latS = "{$latS}"
+    let lntS = "{$lntS}"
+    let image = "{$image}"
   
 </script>

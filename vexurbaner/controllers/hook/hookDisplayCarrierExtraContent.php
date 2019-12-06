@@ -56,12 +56,9 @@ class VexUrbanerhookDisplayCarrierExtraContentController
             return false;
         }
         if (!empty($coor)) {
-            $data = $this->context->cookie->dataRequesUrbanes;
-            print_r(var_dump($data));
-
-            $data = json_decode($data);
-            print_r(var_dump($data));
-            $store = Vex_Request_Sql::getStoreWsId($data[0]->id_order);
+            $dat = $this->context->cookie->dataRequesUrbanes;
+            $dat = json_decode($data);
+            $store = Vex_Request_Sql::getStoreWsId($dat[0]->id_order);
             $this->context->smarty->assign(
                 array(
                     'address'    => $data['address'],
