@@ -46,76 +46,25 @@ class VexUrbanerhookDisplayCarrierExtraContentController
 
     public function run($params)
     {
-        $cart = new Cart($this->context->cart->id);
-        $products = $cart->getProducts();
-
-
-        $time_preparation = 0;
-        $id_feature = Configuration::get('vex_urbaner_id_feature');
-        $dimencions = 0;
-        $peso = 0;
-        $is_v = '';
-        $store = Vex_Request_Sql::getStoreID(1);
         $id = $this->context->cart->id;
-        $coor = VexUrbanerRequest::coordinates($id);
-        $cred = VexUrbanerRequest::checkCredentials();
+        $data = VexUrbanerRequest::getAddress($id);
+        $apiMpas = Configuration::get(VexUrbaner::CONFIG_KEY_GOOGLE_MAPS);
+        $coor = json_decode($this->context->cookie->latLonUrbaner);
 
-        if (!$coor) {
+        if (empty($apiMpas)) {
             return false;
         }
-
-        if (!$cred) {
-            return false;
-        }
-
-        foreach ($products as $value) {
-            $product = new Product($value['id_product']);
-            $features = $product->getFrontFeatures($this->context->language->id);
-            $dimencions += $value['width'] *  $value['height'] * $value['depth'];
-            $peso += $value['width'];
-            foreach ($features as $feature) {
-                if ($feature['id_feature'] == $id_feature) {
-                    if ($time_preparation < (int) $feature['value']) {
-                        $time_preparation = (int) $feature['value'];
-                    }
-                }
-            }
-        }
-
-        if ($dimencions < VexUrbaner::DIMENTIONS_1 && $peso < VexUrbaner::PESO_1) {
-            $is_v = 1;
-        } else if ($dimencions < VexUrbaner::DIMENTIONS_2 && $peso < VexUrbaner::PESO_2) {
-            $is_v = 2;
-        } else {
-            $is_v = 3;
-        }
-
-        $horarys = VexUrbanerRequest::getHorarysFront($time_preparation);
-
-        if ($horarys) {
-            $apiMpas = Configuration::get(VexUrbaner::CONFIG_KEY_GOOGLE_MAPS);
-            if (empty($apiMpas)) {
-                return;
-            }
-
+        if (!empty($coor)) {
             $this->context->smarty->assign(
                 array(
-                    'latTienda'    => $store['lat'],
-                    'lonTienda'    => $store['lnt'],
-                    'latCliente'   => $coor['lat'],
-                    'lonCliente'   => $coor['lnt'],
-                    'cred'         => $cred,
-                    'id'           => $params['carrier']['id'],
-                    'idVh'         => $is_v,
-                    'googleKey'    => $apiMpas,
-                    'semana'       => Json_encode($horarys['horarys']),
-                    'horarys'      => $horarys['horarys'],
-                    'today'        => $horarys['today'],
-                    'time_p'       => $time_preparation,
-                    'return'       => 'false',
-                    'image' => ' ../modules/' . $this->module->name . '/views/img/store.jpg'
+                    'address'    => $data['address'],
+                    'apiGoogle'  => $apiMpas,
+                    'lat'        => $coor->lat,
+                    'lng'        => $coor->lnt
+
                 )
             );
+
             return $this->module->display($this->file, 'views/templates/hook/displayCarrierExtraContent.tpl');
         }
     }

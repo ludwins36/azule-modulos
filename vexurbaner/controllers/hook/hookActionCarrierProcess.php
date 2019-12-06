@@ -190,7 +190,8 @@ class VexUrbanerhookActionCarrierProcessController
         }
 
         $this->context->cookie->__set('priceUrbaner', $pricesGeneral);
-        $this->context->cookie->__set('latLonUrbaner', $coor['lat'] . ' , ' . $coor['lnt']);
+        $this->context->cookie->__set('latLonUrbaner', json_encode($coor));
+
         $this->context->cookie->__set('dataRequesUrbanes', json_encode($dataOrders));
     }
 }

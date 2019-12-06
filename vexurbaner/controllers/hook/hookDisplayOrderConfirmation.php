@@ -28,8 +28,8 @@ class VexUrbanerhookDisplayOrderConfirmationController
 {
     public function __construct($module, $file, $path)
     {
-        require_once dirname($file).'/classes/class-request-urbaner.php';
-        require_once dirname($file).'/sql/request.php';
+        require_once dirname($file) . '/classes/class-request-urbaner.php';
+        require_once dirname($file) . '/sql/request.php';
 
         $this->file = $file;
         $this->module = $module;
@@ -51,6 +51,7 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $carrier_id = $order->id_carrier;
         $id_carrier_old = Configuration::get('VEX_URBANER_CARRIER_ID');
         $oldOrder = Vex_Request_Sql::getOrder($cart_id);
+        $coor = json_decode($this->context->cookie->latLonUrbaner);
 
         if ($id_carrier_old == $carrier_id) {
             if (empty($oldOrder)) {
@@ -76,7 +77,7 @@ class VexUrbanerhookDisplayOrderConfirmationController
                         'date' => $date,
                         'price' => $dat->price,
                         'address' => $address,
-                        'lanLot' => $this->context->cookie->latLonUrbaner,
+                        'lanLot' => $coor->lat . ' , ' . $coor->lnt,
                         'vehicle_id' => '2',
                     );
                     Db::getInstance()
