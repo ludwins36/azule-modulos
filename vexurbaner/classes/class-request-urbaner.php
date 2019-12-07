@@ -237,6 +237,7 @@ class VexUrbanerRequest
 
     public function sendEMail($id, $idWsl)
     {
+        return $idWsl;
         $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $productDescription = '';
         $ordes_products = array();
