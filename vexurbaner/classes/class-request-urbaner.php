@@ -288,7 +288,7 @@ class VexUrbanerRequest
             null
         );
 
-        return $ordes_products;
+        return $store;
     }
 
     public static function getHorarysFront($time = 0)
