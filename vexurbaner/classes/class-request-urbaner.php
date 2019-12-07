@@ -237,8 +237,8 @@ class VexUrbanerRequest
 
     public function sendEMail($id, $idWsl)
     {
-        return $id . $idWsl;
-        $store = Vex_Request_Sql::getStoreWsId($idWsl);
+
+        return $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $productDescription = '';
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
