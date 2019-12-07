@@ -279,7 +279,7 @@ class VexUrbanerRequest
                 Context::getContext()->language->locale
             ),
             $vars,
-            'ludwins36@gmail.com',
+            $store['mail'],
             'Tienda' . ' ' . 'De Azule',
             null,
             null,
