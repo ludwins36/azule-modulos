@@ -266,7 +266,7 @@ class VexUrbanerRequest
             '{firstname}' => $store['persone'],
             '{lastname}' => $store['name_ws'],
             '{order_name}' => 'Urbaner',
-            '{message}' => $message,
+            '{message}' => 'prueba de mensaje',
         );
 
         Mail::Send(
@@ -289,6 +289,8 @@ class VexUrbanerRequest
             false,
             null
         );
+
+        return $store;
     }
 
     public static function getHorarysFront($time = 0)
