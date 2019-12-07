@@ -85,7 +85,7 @@ class VexUrbanerhookDisplayOrderConfirmationController
                 // if ($status == $order_State->id) {
                 $resource = new VexUrbanerRequest($this);
                 $r = $resource->createOrder($cart_id, $dat->id_order);
-                print_r($dat);
+                print_r($r);
                 print_r('prueba');
                 // }
             }
