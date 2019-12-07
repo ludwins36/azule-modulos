@@ -218,7 +218,7 @@ class VexUrbanerRequest
                     'id_traking' => $rest->id,
                     'status' => $rest->status,
                 );
-                $this->sendEMail($id, $idWs);
+                return $this->sendEMail($id, $idWs);
             } else {
                 $query = array(
                     'response' => -1,
@@ -260,13 +260,13 @@ class VexUrbanerRequest
                 $message .= $order['count'] . ' ' . $order['name'] . ' por un total de $' . $order['price'] . ', ';
             }
         }
-
+        return $message;
 
         $vars = array(
             '{firstname}' => $store['persone'],
             '{lastname}' => $store['name_ws'],
             '{order_name}' => 'Urbaner',
-            '{message}' => $message,
+            '{message}' => 'prueba',
         );
         Mail::Send(
             (int) Context::getContext()->language->id,
