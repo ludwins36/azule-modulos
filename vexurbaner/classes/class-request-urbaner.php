@@ -238,7 +238,7 @@ class VexUrbanerRequest
     public function sendEMail($id, $idWsl)
     {
 
-        return $store = Vex_Request_Sql::getStoreWsId($idWsl);
+        $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $productDescription = '';
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
@@ -251,10 +251,11 @@ class VexUrbanerRequest
                     'name'  => $product['name'],
                     'price' => $product['total_wt']
                 );
-
-                array_push($ordes_products, $val);
             }
+            array_push($ordes_products, $prod);
         }
+
+        return $ordes_products;
 
         if (is_array($ordes_products && count($ordes_products) > 0)) {
             foreach ($ordes_products as $order) {
@@ -268,6 +269,7 @@ class VexUrbanerRequest
             '{order_name}' => 'Urbaner',
             '{message}' => 'prueba',
         );
+
         Mail::Send(
             (int) Context::getContext()->language->id,
             'order_merchant_comment',
