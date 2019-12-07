@@ -263,8 +263,8 @@ class VexUrbanerRequest
         }
 
         $vars = array(
-            '{firstname}' => 'ludwins',
-            '{lastname}' => 'robles',
+            '{firstname}' => 'Tienda',
+            '{lastname}' => 'De Azule',
             '{order_name}' => 'Urbaner',
             '{message}' => $message,
         );
@@ -280,7 +280,7 @@ class VexUrbanerRequest
             ),
             $vars,
             'ludwins36@gmail.com',
-            'ludwins' . ' ' . 'robles',
+            'Tienda' . ' ' . 'De Azule',
             null,
             null,
             null,
