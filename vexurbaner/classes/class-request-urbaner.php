@@ -232,7 +232,7 @@ class VexUrbanerRequest
         Db::getInstance()
             ->update('vex_urbaner_orders', $query, "id_vex_urbaner = $id");
 
-        return $result;
+        // return $result;
     }
 
     public function sendEMail($id, $idWsl)
