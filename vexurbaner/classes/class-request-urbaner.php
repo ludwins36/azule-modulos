@@ -261,13 +261,12 @@ class VexUrbanerRequest
                 $message .= $order['count'] . ' ' . $order['name'] . ' por un total de $' . $order['price'] . ', ';
             }
         }
-        return $message;
 
         $vars = array(
             '{firstname}' => $store['persone'],
             '{lastname}' => $store['name_ws'],
             '{order_name}' => 'Urbaner',
-            '{message}' => 'prueba',
+            '{message}' => $message,
         );
 
         Mail::Send(
@@ -290,8 +289,6 @@ class VexUrbanerRequest
             false,
             null
         );
-
-        return $store;
     }
 
     public static function getHorarysFront($time = 0)
