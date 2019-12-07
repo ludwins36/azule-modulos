@@ -207,24 +207,24 @@ class VexUrbanerRequest
         $data = $this->getDataResource($id, $idWs);
         $query = array();
         try {
-            // $result = $curl->post($this->module->module->getUrl() . 'cli/order/', json_encode($data));
+            $result = $curl->post($this->module->module->getUrl() . 'cli/order/', json_encode($data));
 
-            // if (empty($result->error)) {
-            //     // emviar email al correo de la tienda
-            //     $rest = json_decode($result->response);
-            //     $query = array(
-            //         'response' => 1,
-            //         'urlTracking' => $rest->tracking,
-            //         'id_traking' => $rest->id,
-            //         'status' => $rest->status,
-            //     );
-            return $this->sendEMail($id, $idWs);
-            // } else {
-            //     $query = array(
-            //         'response' => -1,
-            //         'status' => $this->module->l('Error'),
-            //     );
-            // }
+            if (empty($result->error)) {
+                // emviar email al correo de la tienda
+                $rest = json_decode($result->response);
+                $query = array(
+                    'response' => 1,
+                    'urlTracking' => $rest->tracking,
+                    'id_traking' => $rest->id,
+                    'status' => $rest->status,
+                );
+                $this->sendEMail($id, $idWs);
+            } else {
+                $query = array(
+                    'response' => -1,
+                    'status' => $this->module->l('Error'),
+                );
+            }
         } catch (Exception $e) {
             Logger::addLog('Urbaner: Install module ' . $e->getMessage());
         }
@@ -232,7 +232,7 @@ class VexUrbanerRequest
         Db::getInstance()
             ->update('vex_urbaner_orders', $query, "id_vex_urbaner = $id");
 
-        // return $result;
+        return $result;
     }
 
     public function sendEMail($id, $idWsl)

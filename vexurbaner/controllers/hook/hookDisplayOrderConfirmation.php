@@ -54,7 +54,7 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $coor = json_decode($this->context->cookie->latLonUrbaner);
 
         if ($id_carrier_old == $carrier_id) {
-            // if (empty($oldOrder)) {
+            if (empty($oldOrder)) {
             foreach ($data as $dat) {
                 $date = 0;
                 if ($dat->time > 0) {
@@ -85,11 +85,9 @@ class VexUrbanerhookDisplayOrderConfirmationController
                 // if ($status == $order_State->id) {
                 $resource = new VexUrbanerRequest($this);
                 $r = $resource->createOrder($cart_id, $dat->id_order);
-                print_r(var_dump($r));
-                print_r('prueba');
-                // }
+                }
             }
-            // }
+            }
         }
     }
 }
