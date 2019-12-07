@@ -266,7 +266,7 @@ class VexUrbanerRequest
             '{firstname}' => 'ludwins',
             '{lastname}' => 'robles',
             '{order_name}' => 'Urbaner',
-            '{message}' => 'prueba de mensaje',
+            '{message}' => $message,
         );
 
         Mail::Send(
