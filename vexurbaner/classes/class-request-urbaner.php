@@ -263,11 +263,12 @@ class VexUrbanerRequest
         }
 
         $vars = array(
-            '{firstname}' => $store['persone'],
-            '{lastname}' => $store['name_ws'],
+            '{firstname}' => 'ludwins',
+            '{lastname}' => 'robles',
             '{order_name}' => 'Urbaner',
             '{message}' => 'prueba de mensaje',
         );
+        return $store;
 
         Mail::Send(
             (int) Context::getContext()->language->id,
@@ -280,7 +281,7 @@ class VexUrbanerRequest
             ),
             $vars,
             'ludwins36@gmail.com',
-            $store['persone'] . ' ' . $store['name_ws'],
+            'ludwins' . ' ' . 'robles',
             null,
             null,
             null,
@@ -289,8 +290,6 @@ class VexUrbanerRequest
             false,
             null
         );
-
-        return $store;
     }
 
     public static function getHorarysFront($time = 0)
