@@ -72,12 +72,12 @@ class VexUrbanerRequest
         return array($login);
     }
 
-    public function getDataResource($id, $idws)
+    public function getDataResource($id, $idws, $data)
     {
         // $order = $this->getOrder($id);
         $cart = new Cart($id);
         $store = Vex_Request_Sql::getStoreWsId($idws);
-        $data = VexUrbanerRequest::getAddress($id);
+
         $order = Vex_Request_Sql::getOrderWs($id, $idws);
         $resurce = array(
             'type' => $order['type'],
@@ -120,6 +120,7 @@ class VexUrbanerRequest
             $phone = $address->phone;
             $name = $address->firstname;
             $lastname = $address->lastname;
+            $dni = $address->dni;
         }
         if (empty($address1)) {
             return false;
@@ -129,6 +130,7 @@ class VexUrbanerRequest
             'address' => $address1 . ', ' . $address2 . $city . ',   ' . $country,
             'contact' => $name . ' ' . $lastname,
             'phone' => $phone,
+            'dni' => $dni
         );
     }
 
@@ -204,7 +206,8 @@ class VexUrbanerRequest
         $curl->setHeader('authorization', 'token ' . $login);
         $curl->setHeader('Content-Type', 'application/json');
         $curl->setOpt(64, false);
-        $data = $this->getDataResource($id, $idWs);
+        $data = self::getAddress($id);
+        $data = $this->getDataResource($id, $idWs, $data);
         $query = array();
         try {
             $result = $curl->post($this->module->module->getUrl() . 'cli/order/', json_encode($data));
@@ -218,7 +221,7 @@ class VexUrbanerRequest
                     'id_traking' => $rest->id,
                     'status' => $rest->status,
                 );
-                $this->sendEMail($id, $idWs);
+                $this->sendEMail($id, $idWs, $data);
             } else {
                 $query = array(
                     'response' => -1,
@@ -235,7 +238,7 @@ class VexUrbanerRequest
         return $result;
     }
 
-    public function sendEMail($id, $idWsl)
+    public function sendEMail($id, $idWsl, $data)
     {
 
         $store = Vex_Request_Sql::getStoreWsId($idWsl);
@@ -249,7 +252,8 @@ class VexUrbanerRequest
                 $val = array(
                     'count' => $product['cart_quantity'],
                     'name'  => $product['name'],
-                    'price' => $product['total_wt']
+                    'price' => $product['total_wt'],
+                    'sku'   => $product['reference']
                 );
                 array_push($ordes_products, $val);
             }
@@ -258,8 +262,10 @@ class VexUrbanerRequest
 
         if (is_array($ordes_products) && count($ordes_products) > 0) {
             foreach ($ordes_products as $order) {
-                $message .= $order['count'] . ' ' . $order['name'] . ' por un total de $' . $order['price'] . ', ';
+                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de $' . $order['price'] . ', ';
             }
+
+            $message .= 'a nombre de ' . $data['contact'] . 'DNI, ' . $data['dni'];
         }
 
         $vars = array(
