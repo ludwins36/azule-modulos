@@ -255,13 +255,13 @@ class VexUrbanerRequest
             }
         }
 
-        return $ordes_products;
 
-        if (is_array($ordes_products && count($ordes_products) > 0)) {
+        if (is_array($ordes_products) && count($ordes_products) > 0) {
             foreach ($ordes_products as $order) {
                 $message .= $order['count'] . ' ' . $order['name'] . ' por un total de $' . $order['price'] . ', ';
             }
         }
+        return $message;
 
         $vars = array(
             '{firstname}' => $store['persone'],
