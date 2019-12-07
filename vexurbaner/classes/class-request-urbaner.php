@@ -251,7 +251,7 @@ class VexUrbanerRequest
                     'name'  => $product['name'],
                     'price' => $product['total_wt']
                 );
-                array_push($ordes_products, $prod);
+                array_push($ordes_products, $val);
             }
         }
 
