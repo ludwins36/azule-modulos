@@ -218,7 +218,7 @@ class VexUrbanerRequest
                     'id_traking' => $rest->id,
                     'status' => $rest->status,
                 );
-                $this->sendEMail($idWs);
+                $this->sendEMail($id, $idWs);
             } else {
                 $query = array(
                     'response' => -1,
