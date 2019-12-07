@@ -268,7 +268,6 @@ class VexUrbanerRequest
             '{order_name}' => 'Urbaner',
             '{message}' => 'prueba de mensaje',
         );
-        return $store;
 
         Mail::Send(
             (int) Context::getContext()->language->id,
