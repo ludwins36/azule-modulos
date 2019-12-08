@@ -247,15 +247,15 @@ class VexUrbanerRequest
         $cart = new Cart($id);
         foreach ($cart->getProducts() as $product) {
             $prod = Vex_Request_Sql::getProduct($product['id_product']);
-            if ($prod['id_ws_seller'] == $idWsl) {
-                $val = array(
-                    'count' => $product['cart_quantity'],
-                    'name'  => $product['name'],
-                    'price' => $product['total_wt'],
-                    'sku'   => $product['reference']
-                );
-                array_push($ordes_products, $val);
-            }
+            // if ($prod['id_ws_seller'] == $idWsl) {
+            $val = array(
+                'count' => $product['cart_quantity'],
+                'name'  => $product['name'],
+                'price' => $product['total_wt'],
+                'sku'   => $product['reference']
+            );
+            array_push($ordes_products, $val);
+            // }
         }
 
 

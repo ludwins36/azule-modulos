@@ -14,7 +14,7 @@ class Vex_Request_Sql
             status,
             id_traking,
             address,
-            date_creation FROM '._DB_PREFIX_.'vex_urbaner_orders Where  response = 1 ORDER BY date_creation DESC';
+            date_creation FROM ' . _DB_PREFIX_ . 'vex_urbaner_orders Where  response = 1 ORDER BY date_creation DESC';
         } else {
             $query = 'SELECT id_vex_urbaner,
             referency,
@@ -24,7 +24,7 @@ class Vex_Request_Sql
             status,
             id_traking,
             address,
-            date_creation  FROM '._DB_PREFIX_.'vex_urbaner_orders Where  response != 1 ORDER BY date_creation DESC';
+            date_creation  FROM ' . _DB_PREFIX_ . 'vex_urbaner_orders Where  response != 1 ORDER BY date_creation DESC';
         }
         $sql = Db::getInstance()->ExecuteS($query);
 
@@ -46,7 +46,7 @@ class Vex_Request_Sql
         lanLot,
         vehicle_id,
         date_creation,
-        address FROM '._DB_PREFIX_."vex_urbaner_orders Where  id_vex_urbaner = $id";
+        address FROM ' . _DB_PREFIX_ . "vex_urbaner_orders Where  id_vex_urbaner = $id";
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
@@ -68,7 +68,7 @@ class Vex_Request_Sql
         vehicle_id,
         date_creation,
 
-        address FROM '._DB_PREFIX_."vex_urbaner_orders Where  id_vex_urbaner = $id AND id_wsl = $idWsl";
+        address FROM ' . _DB_PREFIX_ . "vex_urbaner_orders Where  id_vex_urbaner = $id AND id_wsl = $idWsl";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
@@ -83,7 +83,7 @@ class Vex_Request_Sql
         price,
         status,
         id_traking,
-        address FROM '._DB_PREFIX_.'vex_urbaner_orders';
+        address FROM ' . _DB_PREFIX_ . 'vex_urbaner_orders';
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
@@ -92,7 +92,16 @@ class Vex_Request_Sql
     public static function getProduct($id)
     {
         $query = 'SELECT id_ws_seller,
-        id_product FROM '._DB_PREFIX_."ws_seller_product Where id_product = $id";
+        id_product FROM ' . _DB_PREFIX_ . "ws_seller_product Where id_product = $id";
+        $sql = Db::getInstance()->getRow($query);
+
+        return $sql;
+    }
+
+    public static function getProductWdls($id)
+    {
+        $query = 'SELECT id_ws_seller,
+        id_product FROM ' . _DB_PREFIX_ . "ws_seller_product Where id_ws_seller = $id";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
@@ -106,7 +115,7 @@ class Vex_Request_Sql
         payment_acc,
         date_add,
         date_upd,
-        active FROM '._DB_PREFIX_."ws_seller Where  name = '$name'";
+        active FROM ' . _DB_PREFIX_ . "ws_seller Where  name = '$name'";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
@@ -120,7 +129,7 @@ class Vex_Request_Sql
         payment_acc,
         date_add,
         date_upd,
-        active FROM '._DB_PREFIX_.'ws_seller';
+        active FROM ' . _DB_PREFIX_ . 'ws_seller';
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
@@ -139,7 +148,7 @@ class Vex_Request_Sql
         time,
         mail,
         lat,
-        lnt FROM '._DB_PREFIX_."vex_urbaner_stores WHERE id_ws = $id ";
+        lnt FROM ' . _DB_PREFIX_ . "vex_urbaner_stores WHERE id_ws = $id ";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
@@ -151,7 +160,7 @@ class Vex_Request_Sql
         day,
         start,
         end,
-        status FROM '._DB_PREFIX_.'vex_urbaner_horarys';
+        status FROM ' . _DB_PREFIX_ . 'vex_urbaner_horarys';
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
@@ -163,7 +172,7 @@ class Vex_Request_Sql
         day,
         start,
         end,
-        status FROM '._DB_PREFIX_.'vex_urbaner_horarys WHERE status = 1';
+        status FROM ' . _DB_PREFIX_ . 'vex_urbaner_horarys WHERE status = 1';
         $horarys = Db::getInstance()->ExecuteS($query);
 
         return $horarys;
@@ -182,7 +191,7 @@ class Vex_Request_Sql
         mail,
         phone,
         lat,
-        lnt FROM '._DB_PREFIX_."vex_urbaner_stores WHERE id = '$code' ";
+        lnt FROM ' . _DB_PREFIX_ . "vex_urbaner_stores WHERE id = '$code' ";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
@@ -203,7 +212,7 @@ class Vex_Request_Sql
         city,
         phone,
         lat,
-        lnt FROM '._DB_PREFIX_.'vex_urbaner_stores ';
+        lnt FROM ' . _DB_PREFIX_ . 'vex_urbaner_stores ';
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
@@ -213,7 +222,7 @@ class Vex_Request_Sql
     {
         $query = 'SELECT id,
         date,
-        concep FROM '._DB_PREFIX_.'vex_urbaner_holidays';
+        concep FROM ' . _DB_PREFIX_ . 'vex_urbaner_holidays';
         $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
