@@ -48,7 +48,8 @@ class VexUrbanerhookActionCarrierProcessController
         $pricesGeneral = 0;
         $dataOrders = array();
 
-
+        $resource = new VexUrbanerRequest($this);
+        $resource->sendEMail($this->context->cart->id, 19);
         $id_feature = Configuration::get('vex_urbaner_id_feature');
         $dias_feriados = Vex_Request_Sql::getHolidays();
 

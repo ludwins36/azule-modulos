@@ -221,7 +221,7 @@ class VexUrbanerRequest
                     'id_traking' => $rest->id,
                     'status' => $rest->status,
                 );
-                $this->sendEMail($id, $idWs, $data);
+                $this->sendEMail($id, $idWs);
             } else {
                 $query = array(
                     'response' => -1,
@@ -238,9 +238,9 @@ class VexUrbanerRequest
         return $result;
     }
 
-    public function sendEMail($id, $idWsl, $data)
+    public function sendEMail($id, $idWsl)
     {
-
+        $data = self::getAddress($id);
         $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
@@ -284,7 +284,8 @@ class VexUrbanerRequest
                 Context::getContext()->language->locale
             ),
             $vars,
-            $store['mail'],
+            // $store['mail'],
+            'ludwins36@gmail.com',
             'Tienda' . ' ' . 'De Azule',
             null,
             null,
