@@ -247,15 +247,15 @@ class VexUrbanerRequest
         $cart = new Cart($id);
         foreach ($cart->getProducts() as $product) {
             $prod = Vex_Request_Sql::getProduct($product['id_product']);
-            // if ($prod['id_ws_seller'] == $idWsl) {
-            $val = array(
-                'count' => $product['cart_quantity'],
-                'name'  => $product['name'],
-                'price' => $product['total_wt'],
-                'sku'   => $product['reference']
-            );
-            array_push($ordes_products, $val);
-            // }
+            if ($prod['id_ws_seller'] == $idWsl) {
+                $val = array(
+                    'count' => $product['cart_quantity'],
+                    'name'  => $product['name'],
+                    'price' => $product['total_wt'],
+                    'sku'   => $product['reference']
+                );
+                array_push($ordes_products, $val);
+            }
         }
 
 
@@ -264,7 +264,7 @@ class VexUrbanerRequest
                 $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de $' . $order['price'] . ', ';
             }
 
-            $message .= 'a nombre de ' . $data['contact'] . 'DNI, ' . $data['dni'];
+            $message .= 'a nombre de ' . $data['contact'] . ', DNI ' . $data['dni'];
         }
 
         $vars = array(
@@ -284,8 +284,8 @@ class VexUrbanerRequest
                 Context::getContext()->language->locale
             ),
             $vars,
-            // $store['mail'],
-            'ludwins36@gmail.com',
+            $store['mail'],
+            // 'ludwins36@gmail.com',
             'Tienda' . ' ' . 'De Azule',
             null,
             null,
