@@ -11,7 +11,7 @@
 
 $(document).ready(function () {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
+        if ($(this).scrollTop() > 10) {
             $('#header').addClass("header_omg_im_scrolled");
             $('body').addClass("omg_im_fixed");
         } else {
