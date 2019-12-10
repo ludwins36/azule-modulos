@@ -11,11 +11,11 @@
 
 $(document).ready(function () {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 10) {
-            $('#header').addClass("header_omg_im_scrolled");
+        if ($(this).scrollTop() > 1) {
+            // $('#header').addClass("header_omg_im_scrolled");
             // $('body').addClass("omg_im_fixed");
         } else {
-            $('#header').removeClass("header_omg_im_scrolled");
+            // $('#header').removeClass("header_omg_im_scrolled");
             // $('body').removeClass("omg_im_fixed");
         }
     });
