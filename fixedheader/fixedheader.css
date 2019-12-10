@@ -22,7 +22,7 @@
 
 
     #header.header_omg_im_scrolled .header-nav {
-        display: none;
+        /* display: none; */
     }
 
     #header.header_omg_im_scrolled .header-top {
