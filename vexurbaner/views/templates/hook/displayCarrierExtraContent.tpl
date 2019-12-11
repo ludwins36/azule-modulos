@@ -32,9 +32,11 @@
     {* <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button> *}
 </div>
 <script>
-  jQuery(document).ready(function () {
-    console.log('hola');
+ 
 
-  })
+    document.addEventListener("DOMContentLoaded", function(){
+            console.log('hola');
+
+    }, false);
 
 </script>
