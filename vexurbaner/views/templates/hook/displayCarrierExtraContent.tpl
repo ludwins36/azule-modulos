@@ -42,7 +42,7 @@
 
         let btn = document.getElementByName('confirmDeliveryOption');
         btn[0].addEventListener('click', () => {
-            let text  = document.getElementById('delivery_message');
+            let text  = document.getElementsById('delivery_message');
             console.log(text.value);
 
         })
