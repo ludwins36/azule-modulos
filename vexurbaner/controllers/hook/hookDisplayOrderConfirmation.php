@@ -44,10 +44,10 @@ class VexUrbanerhookDisplayOrderConfirmationController
     {
         $data = $this->context->cookie->dataRequesUrbanes;
         $data = json_decode($data);
-
         $order = $params['order'];
+        $cart = new Cart($order->id_cart);
         echo "<pre>";
-        print_r($order);
+        print_r($cart->getProducts());
         echo "</pre>";
         $cart_id = $order->id_cart;
         $dataR = VexUrbanerRequest::getAddress($cart_id);
