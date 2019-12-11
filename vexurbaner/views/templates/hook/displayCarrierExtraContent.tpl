@@ -43,7 +43,23 @@
         let btn = document.getElementsByName('confirmDeliveryOption');
         btn[0].addEventListener('click', () => {
             let text  = document.getElementById('delivery_message');
+            let address  = document.getElementById('new_address');
+            let address2  = document.getElementById('new_address2');
             console.log(text.value);
+            var url = 'index.php?fc=module&module=vexurbaner&controller=ajax';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: '&address=' + address.value + '&address2=' + address.value + '&message=' + text.value, 
+                success: function (s) {
+                    console.log(s);
+
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+
+            });
 
         })
 
