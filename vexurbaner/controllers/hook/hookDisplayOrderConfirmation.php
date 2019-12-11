@@ -49,9 +49,9 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $carrier = new Carrier($order->id_carrier);
         print_r(var_dump(Tools::getValue('delivery_message')));
 
-        // echo "<pre>";
-        // print_r($order);
-        // echo "</pre>";
+        echo "<pre>";
+        print_r($carrier);
+        echo "</pre>";
         $cart_id = $order->id_cart;
         $dataR = VexUrbanerRequest::getAddress($cart_id);
         $carrier_id = $order->id_carrier;
