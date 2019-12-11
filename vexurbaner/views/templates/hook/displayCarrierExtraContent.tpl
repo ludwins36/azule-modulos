@@ -31,7 +31,7 @@
             </div>
 
              <div class='col-lg-12'>
-                <input type='text' id="new_address2" style="width: 60%; margin-bottom: 10px;" placeholder='detalles de direcciòn'  name='new_address'/>
+                <input type='text' id="new_address2" style="width: 60%; margin-bottom: 10px;" placeholder='detalles de direcciòn'  name='new_address2'/>
             </div>			
     {* <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button> *}
 </div>
