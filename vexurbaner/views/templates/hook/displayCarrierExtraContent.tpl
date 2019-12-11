@@ -40,9 +40,9 @@
 
     document.addEventListener("DOMContentLoaded", function(){
 
-        let btn = document.getElementByName('confirmDeliveryOption');
+        let btn = document.getElementsByName('confirmDeliveryOption');
         btn[0].addEventListener('click', () => {
-            let text  = document.getElementsById('delivery_message');
+            let text  = document.getElementById('delivery_message');
             console.log(text.value);
 
         })
