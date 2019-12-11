@@ -25,44 +25,16 @@
 
 
 <div class='form-group'>
-			<label class='control-label col-lg-3 required' >{l s='Direccón a enviar' mod='vexurbaner'}</label>
+			<label class='control-label col-lg-3 required' >{l s='Si desea puede cambiar la dirección del envío.' mod='vexurbaner'}</label>
             <div class='col-lg-12'>
                 <input type='text' id="new_address" style="width: 60%; margin-bottom: 10px;"  name='new_address' value='{$address|escape:'htmlall':'UTF-8'}'/>
             </div>			
-    <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button>
+    {* <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button> *}
 </div>
-<!-- Modal -->
-<div class="modal fade" id="modalMap" tabindex="-1" role="dialog" aria-labelledby="modalMap" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cambiar Dirección</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p> Arrastra el punto rojo para confirmar tu dirección de envío.
-        </p>
-        <div class='col-lg-10'>
-            <input type='text' style="width: 60%; margin-bottom: 10px;" placeholder="Escriba su nueva dirección" id="new_address_modal"  name='new_address_modal' />
-        </div>	
-        <div id="map"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
+  jQuery(document).ready(function () {
+    console.log('hola');
 
-    let lat = "{$lat}";
-    let lnt = "{$lnt}";
-    let apiGoogle = "{$apiGoogle}"
-    let latS = "{$latS}"
-    let lntS = "{$lntS}"
-    let image = "{$image}"
-  
+  })
+
 </script>

@@ -62,17 +62,12 @@ class VexUrbanerhookDisplayCarrierExtraContentController
             $this->context->smarty->assign(
                 array(
                     'address'    => $data['address'],
-                    'apiGoogle'  => $apiMpas,
-                    'lat'        => $coor->lat,
-                    'lnt'        => $coor->lnt,
-                    'latS'       => $store['lat'],
-                    'lntS'       => $store['lnt'],
-                    'image' => ' ../modules/' . $this->module->name . '/views/img/store.jpg'
+
 
                 )
             );
 
-            // return $this->module->display($this->file, 'views/templates/hook/displayCarrierExtraContent.tpl');
+            return $this->module->display($this->file, 'views/templates/hook/displayCarrierExtraContent.tpl');
         }
     }
 }
