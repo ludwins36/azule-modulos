@@ -341,15 +341,15 @@ class VexUrbanerRequest
             // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
-        // $message .= "\n";
-        // $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+        $message .= "\n";
+        $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
         
-        // $vars = array(
-        //     '{firstname}' => 'Tienda',
-        //     '{lastname}' => 'De Azule',
-        //     '{order_name}' => 'Urbaner',
-        //     '{message}' => $message,
-        // );
+        $vars = array(
+            '{firstname}' => 'Tienda',
+            '{lastname}' => 'De Azule',
+            '{order_name}' => 'Urbaner',
+            '{message}' => $message,
+        );
 
         // Mail::Send(
         //     (int) Context::getContext()->language->id,
