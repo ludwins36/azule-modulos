@@ -51,7 +51,6 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $id_carrier_old = Configuration::get('VEX_URBANER_CARRIER_ID');
         $oldOrder = Vex_Request_Sql::getOrder($cart_id);
         $coor = json_decode($this->context->cookie->latLonUrbaner);
-        print_r($this->context->cookie);
         $resource = new VexUrbanerRequest($this);
         $resource->sendEMailTest($cart_id, 16);
 
