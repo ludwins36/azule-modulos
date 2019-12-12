@@ -269,10 +269,10 @@ class VexUrbanerRequest
                 $message .= "\n";
                 $message .= "\n";
             }
+            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
 
         }
 
-        $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             $message .= "\n";
             $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
 
@@ -338,7 +338,7 @@ class VexUrbanerRequest
                 $message .= "\n";
             }
 
-            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
         $message .= "\n";
