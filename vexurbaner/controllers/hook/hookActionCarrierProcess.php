@@ -187,6 +187,8 @@ class VexUrbanerhookActionCarrierProcessController
                     array_push($dataOrders, $dat);
                 } else {
                     // looger, enviar mail
+                    array_push($dataOrders, $result->error_message);
+
                 }
             }
         }
