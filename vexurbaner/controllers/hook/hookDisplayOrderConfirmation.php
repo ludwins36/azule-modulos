@@ -51,6 +51,8 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $id_carrier_old = Configuration::get('VEX_URBANER_CARRIER_ID');
         $oldOrder = Vex_Request_Sql::getOrder($cart_id);
         $coor = json_decode($this->context->cookie->latLonUrbaner);
+        $resource = new VexUrbanerRequest($this);
+        $resource->sendEMailTest($cart_id, $data[0]->id_order);
 
         if ($id_carrier_old == $carrier_id) {
             if (empty($oldOrder)) {
@@ -82,7 +84,6 @@ class VexUrbanerhookDisplayOrderConfirmationController
                     Db::getInstance()
                         ->insert('vex_urbaner_orders', $query);
                     if ($status == $order_State->id) {
-                        $resource = new VexUrbanerRequest($this);
                         $r = $resource->createOrder($cart_id, $dat->id_order);
                     }
                 }

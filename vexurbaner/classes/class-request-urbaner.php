@@ -245,6 +245,7 @@ class VexUrbanerRequest
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
         $cart = new Cart($id);
+        $currency = new Currency($cart->id_currency);
         foreach ($cart->getProducts() as $product) {
             $prod = Vex_Request_Sql::getProduct($product['id_product']);
             if ($prod['id_ws_seller'] == $idWsl) {
@@ -263,13 +264,16 @@ class VexUrbanerRequest
             foreach ($ordes_products as $order) {
                 $message .= "\n";
                 $message .= "\n";
-                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de $' . $order['price'];
+                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . $currency->iso_code . $order['price'];
                 $message .= "\n";
                 $message .= "\n";
                 $message .= "\n";
             }
 
             $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            $message .= "\n";
+            $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+
         }
 
         $vars = array(
@@ -301,6 +305,75 @@ class VexUrbanerRequest
             null
         );
     }
+
+    public function sendEMailTest($id, $idWsl)
+    {
+        $data = self::getAddress($id);
+        $store = Vex_Request_Sql::getStoreWsId($idWsl);
+        $ordes_products = array();
+        $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
+        $cart = new Cart($id);
+        $currency = new Currency($cart->id_currency);
+        foreach ($cart->getProducts() as $product) {
+            $prod = Vex_Request_Sql::getProduct($product['id_product']);
+            if ($prod['id_ws_seller'] == $idWsl) {
+                $val = array(
+                    'count' => $product['cart_quantity'],
+                    'name'  => $product['name'],
+                    'price' => $product['total_wt'],
+                    'sku'   => $product['reference']
+                );
+                array_push($ordes_products, $val);
+            }
+        }
+
+
+        if (is_array($ordes_products) && count($ordes_products) > 0) {
+            foreach ($ordes_products as $order) {
+                $message .= "\n";
+                $message .= "\n";
+                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . $currency->iso_code . $order['price'];
+                $message .= "\n";
+                $message .= "\n";
+                $message .= "\n";
+            }
+
+            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            $message .= "\n";
+            $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+
+        }
+
+        $vars = array(
+            '{firstname}' => 'Tienda',
+            '{lastname}' => 'De Azule',
+            '{order_name}' => 'Urbaner',
+            '{message}' => $message,
+        );
+
+        Mail::Send(
+            (int) Context::getContext()->language->id,
+            'order_merchant_comment',
+            Context::getContext()->getTranslator()->trans(
+                'Se ha creado una orden a Urbaner',
+                array(),
+                'Emails.Subject',
+                Context::getContext()->language->locale
+            ),
+            $vars,
+            // $store['mail'],
+            'ludwins36@gmail.com',
+            'Tienda' . ' ' . 'De Azule',
+            null,
+            null,
+            null,
+            null,
+            _PS_MAIL_DIR_,
+            false,
+            null
+        );
+    }
+
 
     public static function getHorarysFront($time = 0)
     {

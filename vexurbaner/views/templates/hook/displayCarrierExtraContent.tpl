@@ -50,7 +50,7 @@
             $.ajax({
                 url: url,
                 type: 'POST',
-                data: '&address=' + address.value + '&address2=' + address.value + '&message=' + text.value, 
+                data: '&address=' + address.value + '&address2=' + address2.value + '&message=' + text.value, 
                 success: function (s) {
                     console.log(s);
 
