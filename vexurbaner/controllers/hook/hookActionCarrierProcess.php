@@ -66,7 +66,6 @@ class VexUrbanerhookActionCarrierProcessController
         if (!$coor = VexUrbanerRequest::coordinates($id)) {
             return false;
         }
-        print_r($coor);
 
         if (!$cred) {
             return false;
@@ -81,7 +80,7 @@ class VexUrbanerhookActionCarrierProcessController
             $dimencions += $value['width'] * $value['height'] * $value['depth'];
             $peso += $value['width'];
             foreach ($features as $feature) {
-                if ($feature['id_feature'] == $id_feature) {
+                if ($feature['id_feature'] ==  $id_feature) {
                     if ($time_preparation < (int) $feature['value']) {
                         $time_preparation = (int) $feature['value'];
                     }
@@ -101,6 +100,8 @@ class VexUrbanerhookActionCarrierProcessController
             $time = 0;
             foreach ($lista_simple as $order) {
                 $store = Vex_Request_Sql::getStoreWsId($order);
+                print_r($order);
+                print_r($store);
                 $data = array(
                     'destinations' => array(
                         array(
@@ -116,7 +117,6 @@ class VexUrbanerhookActionCarrierProcessController
 
                 $url = $this->module->getUrl() . 'cli/price/';
                 $result = VexUrbanerRequest::getPriceUrbaner($url, $data);
-                print_r($data);
 
 
                 if (empty($result->error)) {
