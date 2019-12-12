@@ -341,7 +341,7 @@ class VexUrbanerRequest
             // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
-        $message .= "\n";
+        // $message .= "\n";
         $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
         
         $vars = array(
