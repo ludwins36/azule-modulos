@@ -338,7 +338,7 @@ class VexUrbanerRequest
                 $message .= "\n";
             }
 
-            // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
         $message .= "\n";
