@@ -270,11 +270,11 @@ class VexUrbanerRequest
                 $message .= "\n";
             }
 
-            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+        }
+
+        $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             $message .= "\n";
             $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
-
-        }
 
         $vars = array(
             '{firstname}' => 'Tienda',
@@ -339,11 +339,11 @@ class VexUrbanerRequest
             }
 
             $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
-            $message .= "\n";
-            $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
-
+            
         }
-
+        $message .= "\n";
+        $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+        
         $vars = array(
             '{firstname}' => 'Tienda',
             '{lastname}' => 'De Azule',
