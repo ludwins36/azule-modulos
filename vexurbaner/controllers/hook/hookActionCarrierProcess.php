@@ -66,6 +66,7 @@ class VexUrbanerhookActionCarrierProcessController
         if (!$coor = VexUrbanerRequest::coordinates($id)) {
             return false;
         }
+        print_r($coor);
 
         if (!$cred) {
             return false;
