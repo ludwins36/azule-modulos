@@ -115,7 +115,7 @@ class VexUrbanerhookActionCarrierProcessController
 
                 $url = $this->module->getUrl() . 'cli/price/';
                 $result = VexUrbanerRequest::getPriceUrbaner($url, $data);
-                print_r($result);
+                print_r($data);
 
 
                 if (empty($result->error)) {
