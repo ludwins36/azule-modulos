@@ -274,7 +274,8 @@ class VexUrbanerRequest
         }
 
             $message .= "\n";
-            $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+            $message .= 'Comentarios: ' . $this->module->context->cookie->messageUrbaner;
+
 
         $vars = array(
             '{firstname}' => 'Tienda',
@@ -313,7 +314,7 @@ class VexUrbanerRequest
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
         $cart = new Cart($id);
-        // $currency = new Currency($cart->id_currency);
+        $currency = new Currency($cart->id_currency);
         foreach ($cart->getProducts() as $product) {
             $prod = Vex_Request_Sql::getProduct($product['id_product']);
             if ($prod['id_ws_seller'] == $idWsl) {
@@ -342,7 +343,7 @@ class VexUrbanerRequest
             
         }
         $message .= "\n";
-        $message .= 'Comentarios: ' . $this->module->context->cookie->messageUrbaner;
+        $message .= 'Comentarios: ' . $this->module->context->cookie->messageUrbaner . ' ' . $currency->iso_code;
         
         $vars = array(
             '{firstname}' => 'Tienda',
