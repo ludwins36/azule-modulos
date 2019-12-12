@@ -341,7 +341,7 @@ class VexUrbanerRequest
             // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
-        // $message .= "\n";
+        $message .= "\n";
         $message .= 'Comentarios: ' . $this->context->cookie->message;
         
         $vars = array(
@@ -351,27 +351,27 @@ class VexUrbanerRequest
             '{message}' => $message,
         );
 
-        // Mail::Send(
-        //     (int) Context::getContext()->language->id,
-        //     'order_merchant_comment',
-        //     Context::getContext()->getTranslator()->trans(
-        //         'Se ha creado una orden a Urbaner',
-        //         array(),
-        //         'Emails.Subject',
-        //         Context::getContext()->language->locale
-        //     ),
-        //     $vars,
-        //     // $store['mail'],
-        //     'ludwins36@gmail.com',
-        //     'Tienda' . ' ' . 'De Azule',
-        //     null,
-        //     null,
-        //     null,
-        //     null,
-        //     _PS_MAIL_DIR_,
-        //     false,
-        //     null
-        // );
+        Mail::Send(
+            (int) Context::getContext()->language->id,
+            'order_merchant_comment',
+            Context::getContext()->getTranslator()->trans(
+                'Se ha creado una orden a Urbaner',
+                array(),
+                'Emails.Subject',
+                Context::getContext()->language->locale
+            ),
+            $vars,
+            // $store['mail'],
+            'ludwins36@gmail.com',
+            'Tienda' . ' ' . 'De Azule',
+            null,
+            null,
+            null,
+            null,
+            _PS_MAIL_DIR_,
+            false,
+            null
+        );
     }
 
 
