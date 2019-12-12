@@ -100,8 +100,8 @@ class VexUrbanerhookActionCarrierProcessController
             $time = 0;
             foreach ($lista_simple as $order) {
                 $store = Vex_Request_Sql::getStoreWsId($order);
-                print_r($order);
-                print_r($store);
+                $storeWs = Vex_Request_Sql::getStoreWsSellerId($order);
+                print_r($storeWs);
                 $data = array(
                     'destinations' => array(
                         array(
