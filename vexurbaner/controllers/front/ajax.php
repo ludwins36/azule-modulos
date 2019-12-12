@@ -42,7 +42,7 @@ class VexUrbanerAjaxModuleFrontController extends ModuleFrontController
             $message    = Tools::getValue('message');
             $this->context->cookie->__set('urbanerAddress', $address);
             $this->context->cookie->__set('urbanerAddress2', $address2);
-            $this->context->cookie->__set('message', $message);
+            $this->context->cookie->__set('messageUrbaner', $message);
             echo json_encode($address);
             echo json_encode($address2);
             echo json_encode($message);

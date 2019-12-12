@@ -342,7 +342,7 @@ class VexUrbanerRequest
             
         }
         // $message .= "\n";
-        // $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+        $message .= 'Comentarios: ' . $this->context->cookie->message;
         
         $vars = array(
             '{firstname}' => 'Tienda',
