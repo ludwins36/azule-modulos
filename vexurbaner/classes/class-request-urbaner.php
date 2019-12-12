@@ -308,8 +308,8 @@ class VexUrbanerRequest
 
     public function sendEMailTest($id, $idWsl)
     {
-        $data = self::getAddress($id);
-        $store = Vex_Request_Sql::getStoreWsId($idWsl);
+        // $data = self::getAddress($id);
+        // $store = Vex_Request_Sql::getStoreWsId($idWsl);
         $ordes_products = array();
         $message = 'Se ha generado una orden de envío, de Urbaner, por los siguientes productos: ';
         $cart = new Cart($id);
@@ -338,7 +338,7 @@ class VexUrbanerRequest
                 $message .= "\n";
             }
 
-            $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         }
         $message .= "\n";
