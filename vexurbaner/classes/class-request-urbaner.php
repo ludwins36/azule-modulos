@@ -328,50 +328,50 @@ class VexUrbanerRequest
         }
 
 
-        if (is_array($ordes_products) && count($ordes_products) > 0) {
-            foreach ($ordes_products as $order) {
-                $message .= "\n";
-                $message .= "\n";
-                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . '$' . $order['price'];
-                $message .= "\n";
-                $message .= "\n";
-                $message .= "\n";
-            }
+        // if (is_array($ordes_products) && count($ordes_products) > 0) {
+        //     foreach ($ordes_products as $order) {
+        //         $message .= "\n";
+        //         $message .= "\n";
+        //         $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . '$' . $order['price'];
+        //         $message .= "\n";
+        //         $message .= "\n";
+        //         $message .= "\n";
+        //     }
 
-            // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+        //     // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
-        }
-        $message .= "\n";
-        $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
+        // }
+        // $message .= "\n";
+        // $message .= 'Comentarios: ' . $this->context->cookie->__get('message');
         
-        $vars = array(
-            '{firstname}' => 'Tienda',
-            '{lastname}' => 'De Azule',
-            '{order_name}' => 'Urbaner',
-            '{message}' => $message,
-        );
+        // $vars = array(
+        //     '{firstname}' => 'Tienda',
+        //     '{lastname}' => 'De Azule',
+        //     '{order_name}' => 'Urbaner',
+        //     '{message}' => $message,
+        // );
 
-        Mail::Send(
-            (int) Context::getContext()->language->id,
-            'order_merchant_comment',
-            Context::getContext()->getTranslator()->trans(
-                'Se ha creado una orden a Urbaner',
-                array(),
-                'Emails.Subject',
-                Context::getContext()->language->locale
-            ),
-            $vars,
-            // $store['mail'],
-            'ludwins36@gmail.com',
-            'Tienda' . ' ' . 'De Azule',
-            null,
-            null,
-            null,
-            null,
-            _PS_MAIL_DIR_,
-            false,
-            null
-        );
+        // Mail::Send(
+        //     (int) Context::getContext()->language->id,
+        //     'order_merchant_comment',
+        //     Context::getContext()->getTranslator()->trans(
+        //         'Se ha creado una orden a Urbaner',
+        //         array(),
+        //         'Emails.Subject',
+        //         Context::getContext()->language->locale
+        //     ),
+        //     $vars,
+        //     // $store['mail'],
+        //     'ludwins36@gmail.com',
+        //     'Tienda' . ' ' . 'De Azule',
+        //     null,
+        //     null,
+        //     null,
+        //     null,
+        //     _PS_MAIL_DIR_,
+        //     false,
+        //     null
+        // );
     }
 
 
