@@ -328,17 +328,17 @@ class VexUrbanerRequest
         }
 
 
-        // if (is_array($ordes_products) && count($ordes_products) > 0) {
-        //     foreach ($ordes_products as $order) {
-        //         $message .= "\n";
-        //         $message .= "\n";
-        //         $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . '$' . $order['price'];
-        //         $message .= "\n";
-        //         $message .= "\n";
-        //         $message .= "\n";
-        //     }
+        if (is_array($ordes_products) && count($ordes_products) > 0) {
+            foreach ($ordes_products as $order) {
+                $message .= "\n";
+                $message .= "\n";
+                $message .=  $order['count'] . ' ' . $order['name'] . ', SKU ' . $order['sku'] . ', por un total de ' . '$' . $order['price'];
+                $message .= "\n";
+                $message .= "\n";
+                $message .= "\n";
+            }
 
-        //     // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
+            // $message .= 'a nombre de ' . $data['contact'] . ', Documento ' . $data['dni'];
             
         // }
         // $message .= "\n";
