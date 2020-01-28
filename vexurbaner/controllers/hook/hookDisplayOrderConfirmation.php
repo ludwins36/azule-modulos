@@ -53,10 +53,16 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $coor = json_decode($this->context->cookie->latLonUrbaner);
         $resource = new VexUrbanerRequest($this);
         $resource->sendEMailTest($cart_id, 16);
+        print_r('deb 1');
+        if (count($data) > 1) {
+            print_r('deb 2');
 
-        if(count($data) > 1){
             if ($id_carrier_old == $carrier_id) {
+                print_r('deb 3');
+
                 if (empty($oldOrder)) {
+                    print_r('deb 4');
+
                     foreach ($data as $dat) {
                         $date = 0;
                         if ($dat->time > 0) {
