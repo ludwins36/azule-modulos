@@ -45,6 +45,7 @@ class VexUrbanerhookDisplayAdminOrderController
         $order = new Order($params['id_order']);
         $cart_id = $this->context->cart->id;
         $order_urbaner = Vex_Request_Sql::getOrder((int) $cart_id);
+        print_r('hola');
         print_r($order_urbaner);
 
         $order_State = $order->getCurrentOrderState();
