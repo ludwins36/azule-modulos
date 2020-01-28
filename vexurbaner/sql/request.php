@@ -121,6 +121,20 @@ class Vex_Request_Sql
         return $sql;
     }
 
+    public static function getStoreWsSellerId($id)
+    {
+        $query = 'SELECT id_ws_seller,
+        id_customer,
+        name,
+        payment_acc,
+        date_add,
+        date_upd,
+        active FROM ' . _DB_PREFIX_ . "ws_seller Where  id_ws_seller = $id";
+        $sql = Db::getInstance()->getRow($query);
+
+        return $sql;
+    }
+
     public static function getStoreWs()
     {
         $query = 'SELECT id_ws_seller,

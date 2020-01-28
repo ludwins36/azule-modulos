@@ -51,39 +51,42 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $id_carrier_old = Configuration::get('VEX_URBANER_CARRIER_ID');
         $oldOrder = Vex_Request_Sql::getOrder($cart_id);
         $coor = json_decode($this->context->cookie->latLonUrbaner);
+        $resource = new VexUrbanerRequest($this);
+        $resource->sendEMailTest($cart_id, 16);
 
-        if ($id_carrier_old == $carrier_id) {
-            if (empty($oldOrder)) {
-                foreach ($data as $dat) {
-                    $date = 0;
-                    if ($dat->time > 0) {
-                        $date = date('Y-m-d H:s', $dat->time);
-                    }
-                    $order_State = $order->getCurrentOrderState();
-                    $status = Configuration::get(VexUrbaner::CONFIG_STATUS);
-                    $today = date('Y/m/d H:i');
-                    $address = $dataR['address'];
-                    $query = array(
-                        'id_vex_urbaner' => (int) $cart_id,
-                        'id_wsl' => $dat->id_order,
-                        'type' => $dat->type,
-                        'id_traking' => 0,
-                        'referency' => $order->reference,
-                        'date_creation' => $today,
-                        'response' => 0,
-                        'urlTracking' => '',
-                        'status' => $this->module->l('Pendiente'),
-                        'date' => $date,
-                        'price' => $dat->price,
-                        'address' => $address,
-                        'lanLot' => $coor->lat . ' , ' . $coor->lnt,
-                        'vehicle_id' => '2',
-                    );
-                    Db::getInstance()
-                        ->insert('vex_urbaner_orders', $query);
-                    if ($status == $order_State->id) {
-                        $resource = new VexUrbanerRequest($this);
-                        $r = $resource->createOrder($cart_id, $dat->id_order);
+        if(count($data) > 1){
+            if ($id_carrier_old == $carrier_id) {
+                if (empty($oldOrder)) {
+                    foreach ($data as $dat) {
+                        $date = 0;
+                        if ($dat->time > 0) {
+                            $date = date('Y-m-d H:s', $dat->time);
+                        }
+                        $order_State = $order->getCurrentOrderState();
+                        $status = Configuration::get(VexUrbaner::CONFIG_STATUS);
+                        $today = date('Y/m/d H:i');
+                        $address = $dataR['address'];
+                        $query = array(
+                            'id_vex_urbaner' => (int) $cart_id,
+                            'id_wsl' => $dat->id_order,
+                            'type' => $dat->type,
+                            'id_traking' => 0,
+                            'referency' => $order->reference,
+                            'date_creation' => $today,
+                            'response' => 0,
+                            'urlTracking' => '',
+                            'status' => $this->module->l('Pendiente'),
+                            'date' => $date,
+                            'price' => $dat->price,
+                            'address' => $address,
+                            'lanLot' => $coor->lat . ' , ' . $coor->lnt,
+                            'vehicle_id' => '2',
+                        );
+                        Db::getInstance()
+                            ->insert('vex_urbaner_orders', $query);
+                        if ($status == $order_State->id) {
+                            $r = $resource->createOrder($cart_id, $dat->id_order);
+                        }
                     }
                 }
             }

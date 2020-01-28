@@ -36,18 +36,15 @@ class VexUrbanerAjaxModuleFrontController extends ModuleFrontController
 
     public function postProcess()
     {
-        if (Tools::getValue('hour')) {
-            $option = Tools::getValue('hour');
-            $this->context->cookie->__set('dateSend', $option);
-        }
-
-        if (Tools::getValue('address')) {
-            $address = Tools::getValue('address');
-            $this->context->cookie->__set('frontAddress', $address);
-        }
-
-        if (Tools::getValue('action') == 'priceUrbaner') {
-            
-        }
+            $address    = Tools::getValue('address');
+            $address2   = Tools::getValue('address2');
+            $message    = Tools::getValue('message');
+            $this->context->cookie->__set('urbanerAddress', $address);
+            $this->context->cookie->__set('urbanerAddress2', $address2);
+            $this->context->cookie->__set('messageUrbaner', $message);
+            // echo json_encode($address);
+            // echo json_encode($address2);
+            echo $message;
+            exit();
     }
 }

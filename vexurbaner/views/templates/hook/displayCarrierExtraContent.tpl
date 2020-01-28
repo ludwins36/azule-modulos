@@ -25,9 +25,13 @@
 
 
 <div class='form-group'>
-			<label class='control-label col-lg-3 required' >{l s='Si desea puede cambiar la dirección del envío.' mod='vexurbaner'}</label>
+			<label class='control-label col-lg-6 required' >{l s='Si desea puede cambiar la dirección del envío.' mod='vexurbaner'}</label>
             <div class='col-lg-12'>
-                <input type='text' id="new_address" style="width: 60%; margin-bottom: 10px;"  name='new_address' value='{$address|escape:'htmlall':'UTF-8'}'/>
+                <input type='text' id="new_address" style="width: 60%; margin-bottom: 10px;" placeholder='Nueva direcciòn de envìo'  name='new_address'/>
+            </div>
+
+             <div class='col-lg-12'>
+                <input type='text' id="new_address2" style="width: 60%; margin-bottom: 10px;" placeholder='detalles de direcciòn'  name='new_address2'/>
             </div>			
     {* <button type="button" id="btn_new_address" class="btn btn-primary" data-toggle="modal" data-target="#modalMap">Cambiar Dirección de envío</button> *}
 </div>
@@ -35,7 +39,29 @@
  
 
     document.addEventListener("DOMContentLoaded", function(){
-            console.log('hola');
+
+        let btn = document.getElementsByName('confirmDeliveryOption');
+        btn[0].addEventListener('click', () => {
+            let text  = document.getElementById('delivery_message');
+            let address  = document.getElementById('new_address');
+            let address2  = document.getElementById('new_address2');
+            console.log(text.value);
+            var url = 'index.php?fc=module&module=vexurbaner&controller=ajax';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: '&address=' + address.value + '&address2=' + address2.value + '&message=' + text.value, 
+                success: function (s) {
+                    console.log(s);
+
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+
+            });
+
+        })
 
     }, false);
 
