@@ -54,8 +54,7 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $resource = new VexUrbanerRequest($this);
         $resource->sendEMailTest($cart_id, 16);
 
-        print_r($data);
-        if (count($data) > 1) {
+        if (count($data) >= 1) {
             print_r('deb 2');
 
             if ($id_carrier_old == $carrier_id) {
