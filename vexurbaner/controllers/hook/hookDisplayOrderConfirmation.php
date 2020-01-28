@@ -53,7 +53,8 @@ class VexUrbanerhookDisplayOrderConfirmationController
         $coor = json_decode($this->context->cookie->latLonUrbaner);
         $resource = new VexUrbanerRequest($this);
         $resource->sendEMailTest($cart_id, 16);
-        print_r('deb 1');
+
+        print_r($data);
         if (count($data) > 1) {
             print_r('deb 2');
 
