@@ -56,6 +56,12 @@ class VexUrbanergetContentController
      */
     public function run($module)
     {
+        $store = Vex_Request_Sql::getStoreWsName('AEROBIE');
+
+        print_r($store);
+
+
+
         if (((bool) Tools::isSubmit('submitVex_urbanerModule')) == true) {
             $this->postProcess();
         }
