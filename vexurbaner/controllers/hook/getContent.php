@@ -58,10 +58,12 @@ class VexUrbanergetContentController
     {
         $store = Vex_Request_Sql::getStoreWsName('aerobie');
 
-        print_r('aerobie');
-        print_r($store);
+        if($store){
+            $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
 
-        // $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
+            print_r($pro);
+        }
+
 
 
 
