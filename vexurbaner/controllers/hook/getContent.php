@@ -56,7 +56,7 @@ class VexUrbanergetContentController
      */
     public function run($module)
     {
-        $store = Vex_Request_Sql::getStoreWsName('AEROBIe');
+        $store = Vex_Request_Sql::getStoreWsName('aerobie');
 
         print_r($store);
 
