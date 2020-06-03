@@ -93,7 +93,7 @@ class Vex_Request_Sql
     {
         $query = 'SELECT id_ws_seller,
         id_product FROM ' . _DB_PREFIX_ . "ws_seller_product Where id_product = $id";
-        $sql = Db::getInstance()->getRow($query);
+        $sql = Db::getInstance()->ExecuteS($query);
 
         return $sql;
     }
@@ -124,7 +124,7 @@ class Vex_Request_Sql
     public static function getProductsWsId($id)
     {
         $query = 'SELECT id_ws_seller,
-        id_product FROM ' . _DB_PREFIX_ . "ws_seller_product Where  id_ws_seller = $id";
+        id_product FROM ' . _DB_PREFIX_ . "ws_seller_product Where id_ws_seller = $id";
         $sql = Db::getInstance()->getRow($query);
 
         return $sql;
