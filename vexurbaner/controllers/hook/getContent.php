@@ -61,7 +61,8 @@ class VexUrbanergetContentController
         if($store){
             $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
             foreach($pro as $prod){
-                print_r($prod);
+                $p = new Product($prod['id_product']);
+                print_r($p);
 
             }
 
