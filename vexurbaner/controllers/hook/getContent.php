@@ -58,7 +58,6 @@ class VexUrbanergetContentController
     {
         $store = Vex_Request_Sql::getStoreWsName('aerobie');
 
-        if($store){
             $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
             
             $sql = 'SELECT p.*, product_shop.*, stock.out_of_stock, IFNULL(stock.quantity, 0) as quantity,
@@ -74,8 +73,6 @@ class VexUrbanergetContentController
 				FROM ' . _DB_PREFIX_ . 'product Where id_product = 27';
             $rest = Db::getInstance()->ExecuteS($sql);
             print_r($rest);
-        }
-
 
 
 
