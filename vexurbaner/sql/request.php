@@ -121,6 +121,8 @@ class Vex_Request_Sql
         return $sql;
     }
 
+    
+
     public static function getProductsWsId($id)
     {
         $query = 'SELECT id_ws_seller,
