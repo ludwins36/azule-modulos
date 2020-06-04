@@ -57,13 +57,13 @@ class VexUrbanergetContentController
     public function run($module)
     {
         $store = Vex_Request_Sql::getStoreWsName('aerobie');
-            $total = count($products) + 1;
-            $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
+        $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
+        $total = count($products) + 1;
             $dataProducts = 'IN(';
             print_r($total);
             foreach($products as $key => $product){
+                print_r($key);
                 if($key == $total){
-                    print_r($key);
                     $dataProducts .= $product['id_product'] . ')';
 
                 }else{
