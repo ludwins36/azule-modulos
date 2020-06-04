@@ -60,9 +60,8 @@ class VexUrbanergetContentController
 
             $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
             
-            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product';
+            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product IN(27,28)';
             $rest = Db::getInstance()->ExecuteS($sql);
-            print_r($sql);
             print_r($rest);
 
 
