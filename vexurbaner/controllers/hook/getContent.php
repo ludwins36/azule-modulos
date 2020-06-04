@@ -58,11 +58,9 @@ class VexUrbanergetContentController
     {
         $store = Vex_Request_Sql::getStoreWsName('aerobie');
         $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
-        $total = count($products) + 1;
+        $total = count($products) - 1;
             $dataProducts = 'IN(';
-            print_r($total);
             foreach($products as $key => $product){
-                print_r($key);
                 if($key == $total){
                     $dataProducts .= $product['id_product'] . ')';
 
@@ -76,7 +74,7 @@ class VexUrbanergetContentController
             $rest = Db::getInstance()->ExecuteS($sql);
             $data = Product::getProductsProperties(3, $rest);
 
-            // print_r($dataProducts);
+            print_r($dataProducts);
 
 
 
