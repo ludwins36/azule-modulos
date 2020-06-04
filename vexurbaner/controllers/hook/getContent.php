@@ -70,7 +70,7 @@ class VexUrbanergetContentController
 						INTERVAL ' . (Validate::isUnsignedInt(Configuration::get('PS_NB_DAYS_NEW_PRODUCT')) ? Configuration::get('PS_NB_DAYS_NEW_PRODUCT') : 20) . ' DAY
 					)
 				) > 0 new' . (Combination::isFeatureActive() ? ', product_attribute_shop.minimal_quantity AS product_attribute_minimal_quantity, IFNULL(product_attribute_shop.`id_product_attribute`,0) id_product_attribute' : '') . '
-				FROM ' . _DB_PREFIX_ . 'product Where id_product = 27';
+				FROM ' . _DB_PREFIX_ . 'product';
             $rest = Db::getInstance()->ExecuteS($sql);
             print_r($rest);
 
