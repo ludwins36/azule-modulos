@@ -70,7 +70,7 @@ class VexUrbanergetContentController
                 }
             }
             
-            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product IN(27,28)';
+            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product '. $dataProducts;
             $rest = Db::getInstance()->ExecuteS($sql);
             $data = Product::getProductsProperties(3, $rest);
 
