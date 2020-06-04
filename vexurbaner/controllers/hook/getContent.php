@@ -60,8 +60,7 @@ class VexUrbanergetContentController
 
             $pro = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
             
-            $sql = 'SELECT p.*, product_shop.*, stock.out_of_stock, pl.`available_now`, pl.`available_later`, pl.`link_rewrite`, pl.`name`,
-			 image_shop.`id_image` id_image, il.`legend`, m.`name` FROM ' . _DB_PREFIX_ . 'product';
+            $sql = 'SELECT *' . _DB_PREFIX_ . 'product';
             $rest = Db::getInstance()->ExecuteS($sql);
             print_r($rest);
 
