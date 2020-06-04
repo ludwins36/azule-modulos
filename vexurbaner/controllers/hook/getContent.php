@@ -74,7 +74,7 @@ class VexUrbanergetContentController
             $rest = Db::getInstance()->ExecuteS($sql);
             $data = Product::getProductsProperties(3, $rest);
 
-            print_r($dataProducts);
+            print_r($data);
 
 
 
