@@ -59,16 +59,16 @@ class VexUrbanergetContentController
         $store = Vex_Request_Sql::getStoreWsName('aerobie');
 
             $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
-            $dataProducts = [];
+            $dataProducts = 'IN(';
             foreach($products as $product){
                 $dataProducts[] = $product['id_product'];
             }
             
-            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product IN(27,28)';
+            $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product IN('.json_encode($dataProducts).')';
             $rest = Db::getInstance()->ExecuteS($sql);
             $data = Product::getProductsProperties(3, $rest);
 
-            print_r($dataProducts);
+            print_r($data);
 
 
 
