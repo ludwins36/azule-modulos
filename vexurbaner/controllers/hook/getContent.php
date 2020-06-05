@@ -71,12 +71,13 @@ class VexUrbanergetContentController
                     }
                 }
                 
-                $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product '. $dataProducts;
+                $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product '. $dataProducts . ' AND active = 1';
                 $rest = Db::getInstance()->ExecuteS($sql);
                 $data = Product::getProductsProperties(3, $rest);
                 foreach($data as $d){
-                    print_r(['active']);
+                    // print_r(['active']);
                 }
+                print_r($data);
 
                 // return array('total' => count($data), 'result' => $data);
         }
