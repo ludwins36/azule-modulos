@@ -56,31 +56,31 @@ class VexUrbanergetContentController
      */
     public function run($module)
     {
-        $store = Vex_Request_Sql::getStoreWsName('Noia');
-        if($store){
-            $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
-            $total = count($products) - 1;
-            $dataProducts = 'IN(';
-                foreach($products as $key => $product){
-                    if($key == $total){
-                        $dataProducts .= $product['id_product'] . ')';
+        // $store = Vex_Request_Sql::getStoreWsName('Noia');
+        // if($store){
+        //     $products = Vex_Request_Sql::getProductsWsId($store['id_ws_seller']);
+        //     $total = count($products) - 1;
+        //     $dataProducts = 'IN(';
+        //         foreach($products as $key => $product){
+        //             if($key == $total){
+        //                 $dataProducts .= $product['id_product'] . ')';
     
-                    }else{
-                        $dataProducts .= $product['id_product'] . ',';
+        //             }else{
+        //                 $dataProducts .= $product['id_product'] . ',';
     
-                    }
-                }
+        //             }
+        //         }
                 
-                $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product '. $dataProducts . ' AND active = 1';
-                $rest = Db::getInstance()->ExecuteS($sql);
-                $data = Product::getProductsProperties(3, $rest);
-                foreach($data as $d){
-                    // print_r(['active']);
-                }
-                print_r($data);
+        //         $sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'product where id_product '. $dataProducts . ' AND active = 1';
+        //         $rest = Db::getInstance()->ExecuteS($sql);
+        //         $data = Product::getProductsProperties(3, $rest);
+        //         foreach($data as $d){
+        //             // print_r(['active']);
+        //         }
+        //         print_r($data);
 
-                // return array('total' => count($data), 'result' => $data);
-        }
+        //         // return array('total' => count($data), 'result' => $data);
+        // }
         if (((bool) Tools::isSubmit('submitVex_urbanerModule')) == true) {
             $this->postProcess();
         }
